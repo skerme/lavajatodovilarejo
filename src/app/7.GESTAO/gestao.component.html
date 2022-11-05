@@ -1,0 +1,577 @@
+
+      <div class="row conteiner-overflow conteiner-overflow-celular">
+        <div class="container " style="background: rgb(52, 87, 228);">
+
+
+        <p class="alert alert-primary" role="alert"  style="background: rgb(55, 55, 55);  font-size: 30px;  text-align: center; font-weight: bold; color: cornsilk; margin-bottom: 0px;">
+          GESTÃO
+         </p>
+
+
+
+
+
+  <!-- ///////////////////eScolhe PERIODO////////////////////////////////////// -->
+      <div style=" font-size: 18px; font-weight: bold; text-align: center; color: black;   background: rgb(55, 55, 55);">
+
+          <div style="text-align: center; "  >
+            <input style="text-align: center; font-size: 25px; font-weight: bold;"  class="form-control" #drp="bsDaterangepicker" bsDaterangepicker [(ngModel)]="bsRangeValue"  [bsConfig]="{ rangeInputFormat : 'DD-MM-YYYY', dateInputFormat: 'DD-MM-YYYY', showWeekNumbers: true }" >
+          </div>
+
+        <button style="text-align: center;font-size: 25px; font-weight: bold;" class="btn btn-dark " type="Submit" (click)="RCB()"  > PESQUISAR</button> <br>
+       <!-- <button style="text-align: center; font-size: 25px; font-weight: bold;" tyle="text-align: center;" type="button"  class="btn btn-dark"   (click)="prevStep()">   <<--ANTERIOR</button>
+
+    <button type="button" style="font-size: 25px; font-weight: bold;" class="btn btn-dark"   (click)="nextStep()" >  PROXIMO</button> -->
+
+
+
+
+<!--
+    // MÉTODO ADICONAL PARA O LAVAJATO
+    // MÉTODO ADICONAL PARA O LAVAJATO
+    // MÉTODO ADICONAL PARA O LAVAJATO -->
+
+
+    <!-- <button style="text-align: center;font-size: 25px; font-weight: bold;" class="btn btn-dark " type="Submit" (click)="getAllCodigosLavador()"  > PESQUISAR2</button> <br> -->
+
+    <!-- // MÉTODO ADICONAL PARA O LAVAJATO
+    // MÉTODO ADICONAL PARA O LAVAJATO
+    // MÉTODO ADICONAL PARA O LAVAJATO -->
+
+
+
+      </div>
+   <!-- ///////////////////eScolhe PERIODO////////////////////////////////////// -->
+
+
+
+
+
+   <mat-accordion>
+
+    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)"  hideToggle>
+
+
+
+      <mat-expansion-panel-header class="tamanho_texto_celular  tamanho_texto_desktop  alert alert-primary" style="margin-top: 5px;   background: rgb(109, 0, 199);   font-weight: bold; font-style: italic;"   >
+
+        <!-- style="margin-top: 5px;   background: rgb(109, 0, 199); font-size: 30px;   padding-left: 1100px; font-weight: bold; font-style: italic;" -->
+         <mat-panel-title >
+          RESULTADO
+
+        </mat-panel-title>
+        <!-- <mat-panel-description  >
+          RESULTADO
+        </mat-panel-description> -->
+      </mat-expansion-panel-header>
+
+
+
+      <!-- <div style="font-weight: bold; background-color: rgb(35, 38, 41); color: rgb(0, 230, 11); margin-bottom: 6px;"  class=" tamanho_texto_celular tamanho_texto_desktop alert alert-primary" role="alert">
+       CAIXA+RECEITA LÍQUIDA: {{ valorAberturaCaixa+this.valorRCB   | currency : 'BRL' }}
+        <!-- (PERCENTUAL DE GANHO: {{(this.valorRCB-this.valorCMV)/this.valorRCB  | percent:'2.2-2'}}) --
+      </div> -->
+
+
+          <mat-card-content>
+            <div style="font-weight: bold; background-color: rgb(35, 38, 41); color: cornsilk; margin-bottom: 6px;"  class="tamanho_texto_celular  tamanho_texto_desktop  alert alert-primary" role="alert">
+              (+)RECEITA BRUTA:{{this.valorRCB +this.desconto | currency : 'BRL' }}
+            </div>
+
+           <div style="font-weight: bold; background-color: rgb(35, 38, 41);color: cornsilk; margin-bottom: 6px;" class="tamanho_texto_celular tamanho_texto_desktop alert alert-primary" role="alert">
+              (-)DESCONTOS:  {{ this.desconto | currency : 'BRL' }}
+            </div>
+
+             <div style="font-weight: bold; background-color: rgb(35, 38, 41); color: rgb(0, 230, 11); margin-bottom: 6px;"  class=" tamanho_texto_celular tamanho_texto_desktop alert alert-primary" role="alert">
+              (+)RECEITA LÍQUIDA: {{this.valorRCB  | currency : 'BRL' }}
+
+              <!-- (PERCENTUAL DE GANHO: {{(this.valorRCB-this.valorCMV)/this.valorRCB  | percent:'2.2-2'}}) -->
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- <div style=" font-weight: bold; background-color: rgb(35, 38, 41);color: cornsilk; margin-bottom: 6px;" class=" tamanho_texto_celular tamanho_texto_desktop alert alert-primary" role="alert">
+              (-)CUSTO: {{this.valorCMV| currency : 'BRL' }}
+            </div>
+
+
+            <div style=" font-weight: bold; background-color: rgb(35, 38, 41); color: cornsilk; margin-bottom: 6px;" class="tamanho_texto_celular tamanho_texto_desktop alert alert-primary" role="alert">
+              (=)LUCRO BRUTO: {{this.valorRCB  -this.valorCMV| currency : 'BRL' }}
+            </div> -->
+
+            <div style=" font-weight: bold; background-color: rgb(35, 38, 41); color: cornsilk; margin-bottom: 6px;" class="tamanho_texto_celular tamanho_texto_desktop alert alert-primary" role="alert">
+              (-)DESPESAS : {{this.valorDESPESA  | currency : 'BRL' }}
+            </div>
+
+
+            <div *ngIf="this.valorRCB -this.valorCMV-this.valorDESPESA>=0"  style="height: 45px;  font-weight: bold; background-color: rgb(25, 0, 255);color: rgb(255, 255, 255); margin-bottom: 6px;" class="tamanho_texto_celular tamanho_texto_desktop alert alert-primary" role="alert">
+              (=)RESULTADO:{{this.valorRCB -this.valorCMV-this.valorDESPESA | currency : 'BRL'}}
+            </div>
+            <div *ngIf="this.valorRCB -this.valorCMV-this.valorDESPESA<0"  style="height: 45px;  font-weight: bold; background-color: rgb(255, 0, 0);color: rgb(255, 255, 255);  margin-bottom: 6px;" class="tamanho_texto_celular tamanho_texto_desktop alert alert-primary" role="alert">
+              (=)RESULTADO:{{this.valorRCB -this.valorCMV-this.valorDESPESA | currency : 'BRL'}}
+            </div>
+
+            <div style="text-align: center;  font-weight: bold; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); margin-bottom: 6px;"  class="tamanho_texto_celular tamanho_texto_desktop alert alert-primary" role="alert">
+
+              SERVIÇOS: {{this.quantidadeDeItensVendidosPeriodo }}
+               </div>
+
+               <!-- <div style="text-align: center;  font-weight: bold; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); margin-bottom: 6px;"  class="tamanho_texto_celular tamanho_texto_desktop alert alert-primary" role="alert">
+
+                MARGEM DE LUCRO:{{(this.valorRCB  -this.valorCMV)/this.valorRCB | percent:'1.0-2'}}
+                 </div> -->
+
+
+
+
+
+          </mat-card-content>
+
+    </mat-expansion-panel>
+
+
+
+
+    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+      <mat-expansion-panel-header  class="tamanho_texto_celular  tamanho_texto_desktop  alert alert-primary"  style=" background: rgb(9, 235, 118);   font-weight: bolder;   font-style: italic;"  >
+        <mat-panel-title  style="margin-top: 10px;">
+          FORMAS DE PAGAMENTO
+        </mat-panel-title>
+
+      </mat-expansion-panel-header>
+
+
+      <!-- <div style="text-align: center;">
+
+        <mat-form-field appearance="fill">
+          <mat-label>PERÍODO</mat-label>
+          <mat-date-range-input [formGroup]="formaPagamento" [rangePicker]="picker2">
+            <input matStartDate formControlName="start" placeholder="Start date">
+            <input matEndDate formControlName="end" placeholder="End date">
+          </mat-date-range-input>
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-date-range-picker #picker2></mat-date-range-picker>
+
+        <!-- //  <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error> -->
+        <!-- //  <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
+        </mat-form-field>
+
+
+
+        <button style="text-align: center;" class="btn btn-dark " type="Submit" (click)="listarFormaPagamentoTotal()"  > PESQUISAR</button>
+
+      </div>
+ -->
+
+
+
+
+
+      <div class=" table-overflow    tamanho_texto_celular tamanho_texto_desktop" style=" font-weight: bold;">
+        <table
+          class="table table-dark table-bordered table-striped computador_teste3 computador_teste4 cel_tabela text-center"
+        >
+          <thead>
+            <tr>
+              <th scope="col">NOME</th>
+              <th scope="col">VALOR</th>
+            </tr>
+          </thead>
+          <tbody>
+
+
+            <tr *ngFor="let cliente of this.vendaPorForma">
+              <td>PIX</td>
+              <td>{{ cliente.pix | currency : 'BRL' }}</td><br>
+            </tr>
+
+
+            <tr *ngFor="let cliente of this.vendaPorForma">
+              <td>DINHEIRO</td>
+              <td>{{ cliente.dinheiro | currency : 'BRL' }}</td><br>
+            </tr>
+
+            <tr *ngFor="let cliente of this.vendaPorForma">
+              <td>DÉBITO</td>
+              <td>{{ cliente.debito | currency : 'BRL' }}</td><br>
+            </tr>
+
+            <tr *ngFor="let cliente of this.vendaPorForma">
+              <td>CRÉDITO</td>
+              <td>{{ cliente.credito | currency : 'BRL' }}</td><br>
+            </tr>
+
+
+            <tr *ngFor="let cliente of this.vendaPorForma">
+              <td>TOTAL</td>
+              <td>{{ cliente.pix+cliente.dinheiro +cliente.debito+cliente.credito | currency : 'BRL' }}</td><br>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </mat-expansion-panel>
+
+
+
+
+
+
+
+    <mat-expansion-panel  [expanded]="step === 2" (opened)="setStep(2)"  hideToggle>
+      <mat-expansion-panel-header class="tamanho_texto_celular  tamanho_texto_desktop  alert alert-primary"  style="background: rgb(34, 14, 218);     font-weight: bolder;  font-weight: bolder; font-style: italic;" >
+        <mat-panel-title style="margin-top: 10px;"> LAVADORES </mat-panel-title>
+      </mat-expansion-panel-header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class=" table-overflow tamanho_texto_celular tamanho_texto_desktop" style=" font-weight: bold;">
+        <table
+          class="table table-dark table-bordered table-striped text-center  "
+        >
+          <thead>
+            <tr>
+              <th scope="col">NOME</th>
+              <th scope="col">VALOR</th>
+              <th scope="col">40%</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of this.vendaPorVendedor">
+              <td>{{ item._id.vendedor |uppercase  }}</td>
+              <td>{{ item.count | currency : 'BRL'  }}</td>
+              <td  *ngIf="item._id.vendedor  =='Luiz'"   >{{ item.count*.5 | currency : 'BRL'  }}</td>
+              <td  *ngIf="item._id.vendedor  !='Luiz'"   >{{ item.count*.4 | currency : 'BRL'  }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </mat-expansion-panel>
+
+
+<!-- //LAVAJATO -->
+
+    <!-- <mat-expansion-panel  [expanded]="step === 3" (opened)="setStep(3)"  hideToggle   >
+      <mat-expansion-panel-header  class="tamanho_texto_celular  tamanho_texto_desktop  alert alert-primary"  style=" background: rgb(2, 1, 1);  font-weight: bolder;  font-weight: bolder; font-style: italic;" >
+         <mat-panel-title style="margin-top: 10px;">
+          ESTATÍSTICAS DO ESTOQUE
+        </mat-panel-title>
+
+
+      </mat-expansion-panel-header>
+
+
+      <mat-card-content>
+
+
+        <div style=" font-weight: bold; background-color: rgb(35, 38, 41);color: cornsilk; margin-bottom: 6px;" class="alert alert-primary tamanho_texto_celular tamanho_texto_desktop" role="alert">
+          TOTAL PC:  {{this.totalPrecoCompra | currency : 'BRL'  }}
+        </div>
+
+        <div style="font-weight: bold; background-color: rgb(35, 38, 41);color: cornsilk; margin-bottom: 6px;" class="alert alert-primary tamanho_texto_celular tamanho_texto_desktop" role="alert">
+          PV A VAREJO:  {{this.totalPvVarejo | currency : 'BRL' }}
+        </div>
+
+
+        <div style=" font-weight: bold; background-color: rgb(35, 38, 41);color: cornsilk; margin-bottom: 6px;" class="alert alert-primary tamanho_texto_celular tamanho_texto_desktop" role="alert">
+          PV NO ATACADO: {{this.totalPvAtavado | currency : 'BRL' }}
+        </div>
+
+
+
+      </mat-card-content>
+
+
+
+
+
+    </mat-expansion-panel>
+ -->
+
+
+
+
+    <!-- <mat-expansion-panel  [expanded]="step === 4" (opened)="setStep(4)"  hideToggle  *ngIf="resolucao>=900" >
+      <mat-expansion-panel-header  class="tamanho_texto_celular  tamanho_texto_desktop  alert alert-primary"  style=" background: rgb(0, 171, 250);  font-weight: bolder;  font-weight: bolder; font-style: italic;" >
+         <mat-panel-title style="margin-top: 10px;">
+          VENDA DE PRODUTOS NO PERÍODO CÓDIGO E TAMANHO
+        </mat-panel-title>
+
+
+
+      </mat-expansion-panel-header>
+      <button type="button" class="btn btn-primary"   (click)="ATUALIZA2()" >CALCULAR DURAÇÃO</button>
+
+
+
+
+ <div class=" mat-elevation-z8 table-overflow">
+
+
+  <DIV class="row">
+    <input style="font-size:xx-large;  text-align: center;"  (keyup)="filterData1($event)"  placeholder="Pesquisar">
+    </DIV>
+
+
+      <table mat-table  matSort [dataSource]="this.dataSource1">
+
+
+
+
+             <ng-container matColumnDef="codigo">
+              <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> CÓDIGO</th>
+              <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> {{element.codigo}} </td>
+            </ng-container>
+
+
+
+            <ng-container matColumnDef="tamanho">
+              <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> CÓDIGO</th>
+              <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> {{element.tamanho}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="descricao">
+              <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;">DESCRIÇÃO  </th>
+              <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> {{element.descricao | uppercase}} </td>
+            </ng-container>
+
+
+        <ng-container matColumnDef="quantidade">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> QUANTIDADE </th>
+          <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> {{element.quantidade}} </td>
+        </ng-container>
+
+
+
+
+        <ng-container matColumnDef="receita">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> RECEITA </th>
+          <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> {{element.receita | currency : 'BRL' }} </td>
+        </ng-container>
+
+
+
+        <ng-container matColumnDef="custo">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> CUSTO </th>
+          <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> {{element.custo | currency : 'BRL' }} </td>
+        </ng-container>
+
+
+
+        <ng-container matColumnDef="media">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> MÉDIA </th>
+          <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> {{(element.media)  | number : '1.2-2'  }} </td>
+        </ng-container>
+
+
+
+        <ng-container matColumnDef="ganho">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> GANHO </th>
+          <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> {{element.ganho | number : '1.2-2'}}  </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="ganhoPercentual">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> GANHO(%) </th>
+          <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> {{element.ganhoPercentual | number : '1.2-2'}} </td>
+        </ng-container>
+
+
+
+
+        <ng-container matColumnDef="duracao">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 30px;"> DURAÇÃO </th>
+          <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 30px;"> {{element.duracao| number : '1.0-2'}} </td>
+        </ng-container>
+
+
+
+
+
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns1; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+    </table>
+
+    <mat-paginator #paginator
+    [pageSize]="8" >
+    </mat-paginator>
+
+    </div>
+
+
+
+
+
+
+
+    </mat-expansion-panel> -->
+
+
+
+<!-- //LAVAJATO -->
+
+
+
+
+<!--
+
+
+    <mat-expansion-panel hideToggle   >
+      <mat-expansion-panel-header   style=" background: rgb(147, 0, 47);font-size: 30px;   padding-left: 920px; font-weight: bolder;  font-weight: bolder; font-style: italic;" >
+         <mat-panel-title style="margin-top: 10px;">
+          VENDA DE PRODUTOS NO PERÍODO CÓDIGO
+        </mat-panel-title>
+        <!-- <mat-panel-description style="margin-top: 5px;   font-weight: bolder;  font-weight: bolder; font-style: italic;">
+          VENDA DE PRODUTOS NO PERÍODO
+        </mat-panel-description>
+
+
+      </mat-expansion-panel-header>
+
+
+
+
+
+
+<!-- //////////////////////
+
+
+
+<div class=" mat-elevation-z8 table-overflow">
+
+
+  <DIV class="row">
+    <input style="font-size:xx-large;  text-align: center;"  (keyup)="filterData2($event)"  placeholder="Pesquisar">
+    </DIV>
+
+
+      <table mat-table  matSort [dataSource]="this.dataSource2">
+
+
+
+             <ng-container matColumnDef="codigo">
+              <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> CÓDIGO</th>
+              <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> {{element.codigo}} </td>
+            </ng-container>
+
+
+            <ng-container matColumnDef="descricao">
+              <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;">DESCRIÇÃO </th>
+              <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> {{element.descricao |uppercase}} </td>
+            </ng-container>
+
+
+
+
+        <ng-container matColumnDef="quantidade">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> QUANTIDADE</th>
+          <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> {{element.quantidade}} </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns2; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
+    </table>
+
+    <mat-paginator #paginator
+    [pageSize]="9" >
+    </mat-paginator>
+
+    </div>
+
+<!-- /////////////////////////////////////
+
+
+
+      <!-- <div class=" table-overflow" style="font-size: 30px; font-weight: bold;">
+        <table
+          class="table table-dark table-bordered table-striped computador_teste3 computador_teste4 cel_tabela text-center"
+        >
+          <thead>
+            <tr>
+              <th scope="col">CÓDIGO</th>
+              <th scope="col">DESCRIÇÃO</th>
+              <th scope="col">QUANTIDADE</th>
+            </tr>
+          </thead>
+          <tbody>
+
+
+            <tr *ngFor="let item of this.resultado2">
+              <td>{{ item.codigo }}</td>
+              <td>{{ item.descricao | uppercase}}</td>
+              <td>{{ item.quantidade }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+
+
+    </mat-expansion-panel>
+
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </mat-accordion>
+
+
+
+
+
+
+
+
+
+  </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

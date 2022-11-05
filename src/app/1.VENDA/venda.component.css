@@ -1,0 +1,64 @@
+/*
+/* // PARA O RADIO BUTTON DE DEMANDA */
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 10px;
+}
+/* // PARA O RADIO BUTTON DE DEMANDA */
+
+
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+
+
+
+ */
+
+/* PARA A TABELA DO PRODUTO */
+.table-overflow {
+  max-height:700px;
+  overflow-x:auto;
+  overflow-y: scroll;
+  overflow: auto;
+}
+
+
+
+/* CESTA */
+.table-overflow2 {
+  max-height:550px;
+  overflow-x:auto;
+  overflow-y: scroll;
+
+}
+
+.computador_teste2 {
+  height: auto;
+  font-size:14px;
+  font-weight: bold
+}
+/* CESTA */
+
+
+
+ /* tamanho da tela */
+/* .conteiner-overflow {
+  height: 1185px;
+  width: 2715px;
+  margin-left: 0px;
+
+  /* padding: 15px; */
+  /* border: 1px solid #444; 
+  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: hidden;
+} */
+/* tamanho da tela */

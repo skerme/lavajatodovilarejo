@@ -1,0 +1,338 @@
+
+      <div class="row conteiner-overflow ">
+        <div class="container " style="background: rgb(52, 87, 228);">
+
+
+        <p class="alert alert-primary" role="alert"  style="background: rgb(55, 55, 55);  font-size: 15px;  text-align: center; font-weight: bold; color: cornsilk; margin-bottom: 0px;">
+         CLIENTE
+         </p>
+
+
+
+   <mat-accordion>
+
+
+    <mat-expansion-panel [expanded]="true"    hideToggle>
+      <mat-expansion-panel-header  style="background: rgb(0, 0, 0); font-size: 15px;   padding-left: 1100px;" >
+         <!-- <mat-panel-title >
+          ITEM 1
+        </mat-panel-title> -->
+        <mat-panel-description style=" font-weight: bolder;  font-weight: bolder; font-style: italic;  margin-top: 10px;  margin-bottom: 10px;">
+          CADASTRAR
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+     <!-- ///////44444444//////////////////// -->
+
+
+
+
+
+          <mat-card-content>
+
+        <div class="example-container"  style=" text-align: center;">
+
+
+
+
+          <mat-form-field style="margin-left: 20px; margin-top: 50px;" hintLabel="Max 10 characters" appearance="fill">
+            <mat-label>PLACA</mat-label>
+            <input matInput #input maxlength="100" placeholder="estudar math"    [(ngModel)]= "nome"  required>
+            <mat-hint align="end">{{input.value?.length || 0}}/100</mat-hint>
+          </mat-form-field>
+
+
+<!-- //LAVAJATO -->
+
+
+
+
+
+<!--
+          <mat-form-field style="margin-left: 20px;" hintLabel="Max 10 characters" appearance="fill">
+            <mat-label>CPF</mat-label>
+            <input matInput #input maxlength="11" placeholder="estudar math"    [(ngModel)]= "cpf"  required>
+            <mat-hint align="end">{{input.value?.length || 0}}/11</mat-hint>
+          </mat-form-field>
+
+          <mat-form-field style="margin-left: 20px;" hintLabel="Max 10 characters" appearance="fill">
+            <mat-label>CNPJ </mat-label>
+            <input matInput #input maxlength="14" placeholder="estudar math"    [(ngModel)]= "cnpj"  required>
+            <mat-hint align="end">{{input.value?.length || 0}}/14</mat-hint>
+          </mat-form-field>
+
+
+
+
+          <mat-form-field style="margin-left: 20px; margin-top: 50px;" hintLabel="Max 10 characters" appearance="fill">
+            <mat-label>EMAIL</mat-label>
+            <input matInput #input maxlength="100" placeholder="estudar math"    [(ngModel)]= "email"  required>
+            <mat-hint align="end">{{input.value?.length || 0}}/100</mat-hint>
+          </mat-form-field>
+
+          <mat-form-field style="margin-left: 20px;" hintLabel="Max 10 characters" appearance="fill">
+            <mat-label>BAIRRO</mat-label>
+            <input matInput #input maxlength="100" placeholder="estudar math"    [(ngModel)]= "bairro"  required>
+            <mat-hint align="end">{{input.value?.length || 0}}/100</mat-hint>
+          </mat-form-field>
+
+          <mat-form-field style="margin-left: 20px;" hintLabel="Max 10 characters" appearance="fill">
+            <mat-label>CEP </mat-label>
+            <input matInput #input maxlength="8" placeholder="estudar math"    [(ngModel)]= "cep"  required>
+            <mat-hint align="end">{{input.value?.length || 0}}/8</mat-hint>
+          </mat-form-field>
+
+
+
+
+
+
+          <mat-form-field style="margin-left: 20px; margin-top: 50px;" hintLabel="Max 10 characters" appearance="fill">
+            <mat-label>COMPLEMENTO </mat-label>
+            <input matInput #input maxlength="100" placeholder="estudar math"    [(ngModel)]= "complemento"  required>
+            <mat-hint align="end">{{input.value?.length || 0}}/100</mat-hint>
+          </mat-form-field>
+
+          <mat-form-field style="margin-left: 20px;" hintLabel="Max 10 characters" appearance="fill">
+            <mat-label>LOGRADOURO</mat-label>
+            <input matInput #input maxlength="100" placeholder="estudar math"    [(ngModel)]= "logradouro"  required>
+            <mat-hint align="end">{{input.value?.length || 0}}/100</mat-hint>
+          </mat-form-field>
+
+          <mat-form-field style="margin-left: 20px;" hintLabel="Max 10 characters" appearance="fill">
+            <mat-label>NUMERO</mat-label>
+            <input matInput #input maxlength="10" placeholder="estudar math"    [(ngModel)]= "numero"  required>
+            <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+          </mat-form-field>
+
+
+-->
+<mat-form-field style="margin-left: 20px;" hintLabel="Max 10 characters" appearance="fill">
+  <mat-label>TELEFONE</mat-label>
+  <input matInput #input maxlength="14" placeholder="estudar math"    [(ngModel)]= "telefone"  required>
+  <mat-hint align="end">{{input.value?.length || 0}}/14</mat-hint>
+</mat-form-field>
+
+
+
+          <mat-form-field style="margin-left: 20px; margin-top: 50px;" hintLabel="Max 10 characters" appearance="fill">
+            <mat-label>NOME</mat-label>
+            <input matInput #input maxlength="100" placeholder="estudar math"    [(ngModel)]= "pontoReferencia"  required>
+            <mat-hint align="end">{{input.value?.length || 0}}/100</mat-hint>
+          </mat-form-field>
+
+
+          <!-- //LAVAJATO -->
+
+
+
+
+
+
+
+
+
+
+
+
+        <DIV style="text-align: center;">
+          <button type="submit" class="btn btn-success "  (click)="inserir()" >INCLUIR</button>
+          <button type="btn"    class="btn btn-secondary " (click)="limpar()">LIMPAR</button>
+        </DIV>
+        <br>
+
+        </div>
+
+        <div *ngIf="nome=='';then content else other_content">here is ignored</div>
+        <ng-template #content><div class="alert alert-danger" role="alert" style="text-align: center;  font-weight: bold;">FORMULÁRIO INVÁLIDO</div></ng-template>
+        <ng-template #other_content><div class="alert alert-primary" role="alert" style="text-align: center;  font-weight: bold;">FORMULÁRIO VÁLIDO</div></ng-template>
+
+        </mat-card-content>
+
+        <!-- </mat-card> -->
+
+
+
+
+
+
+
+
+
+
+    <!-- /////444444444///////////////// -->
+    </mat-expansion-panel>
+
+
+
+
+
+
+
+
+
+
+
+  </mat-accordion>
+
+
+
+
+
+    <br>
+
+
+
+
+
+
+
+
+    <div class=" mat-elevation-z8 table-overflow">
+
+
+      <DIV class="row">
+        <input style="font-size:xx-large;  text-align: center;"  (keyup)="filterData($event)"  placeholder="Pesquisar">
+        </DIV>
+      <table mat-table  matSort [dataSource]="this.dataSource">
+
+
+
+
+             <!-- Position Column -->
+             <ng-container matColumnDef="nome">
+              <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 15px;"> PLACA</th>
+              <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 15px;"> {{element.nome}} </td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="cpf">
+              <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 15px;">CPF </th>
+              <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 15px;"> {{element.cpf}} </td>
+            </ng-container>
+
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="cnpj">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 15px;"> CNPJ </th>
+          <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 15px;"> {{element.cnpj}} </td>
+        </ng-container>
+
+
+
+
+
+               <!-- Position Column -->
+               <ng-container matColumnDef="email">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 15px;"> EMAIL</th>
+                <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 15px;"> {{element.email}} </td>
+              </ng-container>
+
+              <!-- Name Column -->
+              <ng-container matColumnDef="bairro">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 15px;">BAIRRO </th>
+                <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 15px;"> {{element.bairro}} </td>
+              </ng-container>
+
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="cep">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 15px;">CEP </th>
+            <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 15px;"> {{element.cep}} </td>
+          </ng-container>
+
+
+
+
+
+                 <!-- Position Column -->
+        <ng-container matColumnDef="complemento">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 15px;">COMPLEMENTO</th>
+          <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 15px;"> {{element.complemento}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="logradouro">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 15px;">LOGRADOURO</th>
+          <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 15px;"> {{element.logradouro}} </td>
+        </ng-container>
+
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="numero">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 15px;"> NUMERO</th>
+      <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 15px;"> {{element.numero}} </td>
+    </ng-container>
+
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="pontoReferencia">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 15px;">NOME</th>
+      <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 15px;"> {{element.pontoReferencia}} </td>
+    </ng-container>
+
+
+<!-- Name Column -->
+<ng-container matColumnDef="telefone">
+  <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 15px;"> TELEFONE</th>
+  <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 15px;"> {{element.telefone}} </td>
+</ng-container>
+
+
+<ng-container matColumnDef="dataDoCadastro">
+  <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 15px;"> DATA</th>
+  <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 15px;"> {{element.dataDoCadastro | date:'dd/MM/yyyy HH:mm'}} </td>
+</ng-container>
+
+
+
+
+
+
+
+        <ng-container matColumnDef="acao"  >
+          <th mat-header-cell *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 15px;">AÇÃO</th>
+          <td  mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 15px;" >
+            <button type="button" class="btn btn-info "  (click)="editar(element)" ><i class="bi bi-pencil-square"></i> </button>
+            <button type="button" class="btn btn-danger"   (click)="desativar(element)" > <i class="bi bi-x-square " ></i>   </button>
+
+
+
+          </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator #paginator
+    [pageSize]="9" >
+    </mat-paginator>
+
+    </div>
+
+
+
+
+    <br><br><br><br><br>
+
+
+
+  </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

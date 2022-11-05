@@ -1,0 +1,237 @@
+
+
+
+
+
+<div class="row conteiner-overflow conteiner-overflow-celular">
+<div class="container " style="background: rgb(52, 87, 228);">
+
+
+
+
+<!-- // PARA O LOGIN -->
+
+<div  *ngIf="!senhacorreta ">
+
+ <DIV class="row">
+
+  <!-- <DIV class="col-4"></DIV> -->
+
+
+  <!-- <DIV class="col-4"> -->
+
+<mat-card class="example-card"  style="margin-top: 400px;"  >
+<form   [formGroup]="formLogin"  (ngSubmit)="entrar()">
+<div class="mb-3">
+<label for="exampleInputEmail1" class="form-label tamanho_texto_desktop">Email</label>
+
+<input type="email" class="form-control tamanho_texto_desktop" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName='email'>
+
+<div id="emailHelp" class="form-text tamanho_texto_desktop"> Nunca compartilhe seu email.</div>
+</div>
+
+
+
+
+
+
+
+
+<div class="mb-3">
+<label for="exampleInputPassword1" class="form-label tamanho_texto_desktop">Senha</label>
+
+<input type="password" class="form-control tamanho_texto_desktop" id="exampleInputPassword1" formControlName='password'>
+
+</div>
+
+<div style="text-align: center; ">
+<button type="submit"  class="btn btn-primary tamanho_texto_desktop">Entrar</button>
+</div>
+<!-- <button type="button" class="btn btn-danger"  (click)='sair()'>Sair</button> -->
+</form>
+
+
+</mat-card>
+
+
+<!-- </DIV> -->
+
+ </DIV>
+
+
+
+
+
+</div>
+
+
+
+
+<!-- // PARA O LOGIN  COMOPUTADOR-->
+
+
+
+
+<!-- // PARA O LOGIN  CELULAR-->
+
+<!--
+
+ <div  *ngIf="!senhacorreta && resolucao<900">
+
+
+
+
+
+
+
+ <mat-card class="example-card"  >
+ <form   [formGroup]="formLogin"  (ngSubmit)="entrar()">
+ <div class="mb-3">
+ <label for="exampleInputEmail1" class="form-label tamanho_texto_celular">Email</label>
+
+ <input type="email" class="form-control tamanho_texto_celular" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName='email'>
+
+ <div id="emailHelp" class="form-text tamanho_texto_celular"> Nunca compartilhe seu email.</div>
+ </div>
+
+
+
+
+
+
+
+
+ <div class="mb-3">
+ <label for="exampleInputPassword1" class="form-label tamanho_texto_celular">Senha</label>
+
+ <input type="password" class="form-control tamanho_texto_celular" id="exampleInputPassword1" formControlName='password'>
+
+ </div>
+
+ <div style="text-align: center; ">
+ <button type="submit" class="btn btn-primary tamanho_texto_celular">Entrar</button>
+</div>
+ <!-- <button type="button" class="btn btn-danger"  (click)='sair()'>Sair</button> --
+ </form>
+
+
+ </mat-card>
+
+
+ </div> -->
+
+
+
+
+
+<!-- // PARA O LOGIN  CELULAR-->
+
+
+
+<div  *ngIf="senhacorreta">
+
+
+
+
+  <!-- //////////NOVO MENU/// -->
+  <nav class="navbar navbar-expand-lg navbar-dark   bg-primary">
+    <div class="container-fluid ">
+      <!-- <a class="navbar-brand" href="#">MENU</a> -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav" >
+        <ul class="navbar-nav"  >
+
+
+
+
+           <li  class="nav-item ">
+            <a   class="nav-link active" aria-current="page" (click)="menunovo(0)" data-bs-toggle="collapse">VENDA</a>
+          </li>
+
+
+          <li class="nav-item ">
+            <a  class="nav-link active computador_teste4" (click)="menunovo(2)"  >HISTÓRICO</a>
+          </li>
+
+
+
+          <li class="nav-item ">
+            <a  class="nav-link active computador_teste4" (click)="menunovo(3)"  >DESPESA</a>
+          </li>
+
+
+          <li class="nav-item ">
+            <a  class="nav-link active computador_teste4" (click)="menunovo(5)"  >CLIENTE</a>
+          </li>
+
+
+          <li class="nav-item "  disabled>
+            <a *ngIf="this.ocutarmenuopcoes "  class="nav-link active computador_teste4" (click)="menunovo(1)"  >PRODUTO</a>
+          </li>
+
+
+
+          <li class="nav-item ">
+            <a  *ngIf="this.ocutarmenuopcoes "  class="nav-link active computador_teste4" (click)="menunovo(6)"  >PESSOAL</a>
+          </li>
+
+
+          <li class="nav-item ">
+            <a   class="nav-link active computador_teste4" (click)="menunovo(7)"  >GESTÃO</a>
+          </li>
+
+
+          <li class="nav-item ">
+            <a *ngIf="this.ocutarmenuopcoes "  class="nav-link active computador_teste4" (click)="menunovo(8)"  >USUÁRIO</a>
+          </li>
+
+
+          <!-- <li class="nav-item ">
+            <a *ngIf="this.ocutarmenuopcoes "  class="nav-link active computador_teste4" (click)="menunovo(9)"  >COMPRA</a>
+          </li> -->
+
+
+        </ul>
+
+
+        <button class="btn btn-dark " type="Submit" (click)="sair()"  > SAIR</button>
+      </div>
+    </div>
+  </nav>
+  <!-- //////////NOVO MENU/// -->
+
+
+</div>
+
+
+
+
+
+
+
+<!--
+<div class="col-2" style=" font-size: 20px; font-weight: bold; background-color: black; color: beige; ">
+  <br>
+    USUÁRIO: {{this.nomeUsuarioAtivo}}
+    <button class="btn btn-warning " type="Submit" (click)="sair()"  > SAIR</button>
+
+</div>
+ -->
+
+</div>
+
+</div>
+
+
+<div  *ngIf="this.token=='SENHA OU EMAIL INCORRETOS'"    style="background-color: black;   color: aliceblue; text-align: center;" class="alert alert-dark    tamanho_texto_celular tamanho_texto_desktop" role="alert">
+  SENHA OU EMAIL INCORRETO(S)
+</div>
+
+  <router-outlet></router-outlet>
+
+
+

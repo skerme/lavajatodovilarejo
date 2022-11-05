@@ -1,0 +1,502 @@
+
+      <div class="row conteiner-overflow ">
+        <div class="container " style="background: rgb(52, 87, 228);">
+
+
+        <p class="alert alert-primary" role="alert"  style="background: rgb(55, 55, 55);  font-size: 30px;  text-align: center; font-weight: bold; color: cornsilk; margin-bottom: 0px;">
+        PESSOAL
+         </p>
+
+
+
+   <mat-accordion>
+
+
+    <mat-expansion-panel [expanded]="true"   hideToggle>
+      <mat-expansion-panel-header  style="background: rgb(0, 0, 0); font-size: 30px;   padding-left: 1100px;" >
+         <!-- <mat-panel-title >
+          ITEM 1
+        </mat-panel-title> -->
+        <mat-panel-description style=" font-weight: bolder;  font-weight: bolder; font-style: italic;  margin-top: 10px;  margin-bottom: 10px;" >
+          CADASTRAR
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+     <!-- ///////44444444//////////////////// -->
+
+
+
+
+
+          <mat-card-content>
+
+
+
+
+
+          <mat-form-field style="margin-left: 20px; margin-top: 50px;" hintLabel="PREENCHIMENTO OBRIGATÓRIO" appearance="fill">
+            <mat-label>NOME</mat-label>
+            <input matInput #input maxlength="100" placeholder="estudar math"    [(ngModel)]= "nome"  required>
+            <mat-hint align="end">{{input.value?.length || 0}}/100</mat-hint>
+          </mat-form-field>
+
+
+          <mat-form-field style="margin-left: 20px;" hintLabel="PREENCHIMENTO OBRIGATÓRIO" appearance="fill">
+            <mat-label>CPF</mat-label>
+            <input matInput #input maxlength="11" placeholder="estudar math"    [(ngModel)]= "cpf"  required>
+            <mat-hint align="end">{{input.value?.length || 0}}/11</mat-hint>
+          </mat-form-field>
+
+
+
+          <!-- <mat-form-field style="margin-left: 120px;" hintLabel="Max 10 characters" appearance="fill">
+            <mat-label>PIS </mat-label>
+            <input matInput #input maxlength="100" placeholder="estudar math"    [(ngModel)]= "pis"  required>
+            <mat-hint align="end">{{input.value?.length || 0}}/100</mat-hint>
+          </mat-form-field>
+
+
+
+
+          <mat-form-field style="margin-left: 120px;" hintLabel="Max 10 characters" appearance="fill">
+            <mat-label>CTPS</mat-label>
+            <input matInput #input maxlength="100" placeholder="estudar math"    [(ngModel)]= "ctps"  required>
+            <mat-hint align="end">{{input.value?.length || 0}}/100</mat-hint>
+          </mat-form-field>
+
+
+
+
+
+
+
+
+          <mat-form-field style="margin-left: 120px;" hintLabel="Max 10 characters" appearance="fill">
+            <mat-label>VINCULO </mat-label>
+            <input matInput #input maxlength="100" placeholder="estudar math"    [(ngModel)]= "vinculo"  required>
+            <mat-hint align="end">{{input.value?.length || 0}}/100</mat-hint>
+          </mat-form-field>
+
+
+
+
+
+          <mat-form-field style="margin-left: 120px;" hintLabel="Max 10 characters" appearance="fill">
+            <mat-label>SITUACAO</mat-label>
+            <input matInput #input maxlength="100" placeholder="estudar math"    [(ngModel)]= "situacao"  required>
+            <mat-hint align="end">{{input.value?.length || 0}}/100</mat-hint>
+          </mat-form-field> -->
+
+
+
+<!--
+          <mat-form-field style="margin-left: 120px;" hintLabel="Max 10 characters" appearance="fill">
+            <mat-label>CARGO </mat-label>
+            <input matInput #input maxlength="10" placeholder="estudar math"    [(ngModel)]= "cargo"  required>
+            <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+          </mat-form-field> -->
+
+
+            <mat-form-field appearance="fill"  style="margin-left: 20px;" >
+          <mat-label>CARGO</mat-label>
+          <mat-select  [(value)]="cargo"  required>
+            <mat-option value="vendedor">VENDEDOR</mat-option>
+            <mat-option value="caixa">CAIXA</mat-option>
+            <mat-option value="administrador">ADMINISTRADOR</mat-option>
+
+          </mat-select>
+
+        </mat-form-field>
+
+
+
+
+
+
+
+
+
+<!--
+          <mat-form-field style="margin-left: 120px;" hintLabel="Max 10 characters" appearance="fill">
+            <mat-label>DEPENDENTES </mat-label>
+            <input matInput #input maxlength="10" placeholder="estudar math"    [(ngModel)]= "dependentes"  required>
+            <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+          </mat-form-field>
+
+
+ -->
+
+
+
+
+
+          <mat-form-field style="margin-left: 20px; margin-top: 50px;" hintLabel="Max 10 characters" appearance="fill">
+            <mat-label>EMAIL</mat-label>
+            <input matInput #input maxlength="100" placeholder="estudar math"    [(ngModel)]= "email"  required>
+            <mat-hint align="end">{{input.value?.length || 0}}/100</mat-hint>
+          </mat-form-field>
+
+
+
+
+
+
+
+          <mat-form-field style="margin-left: 120px;" hintLabel="Max 10 characters" appearance="fill">
+            <mat-label>NASCIMENTO</mat-label>
+            <input matInput [matDatepicker]="picker"    [(ngModel)]= "dataNascimento" >
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+
+          <mat-form-field style="margin-left: 120px;" hintLabel="Max 10 characters" appearance="fill">
+            <mat-label>ADMISSÃO</mat-label>
+            <input matInput [matDatepicker]="picker2"    [(ngModel)]= "dataAdmissao" >
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>
+
+
+
+
+
+
+
+
+          <mat-form-field style="margin-left: 20px;" hintLabel="Max 10 characters" appearance="fill">
+            <mat-label>SALÁRIO BASE </mat-label>
+            <input matInput #input maxlength="10" placeholder="estudar math"    [(ngModel)]= "salarioBase"  required>
+            <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+          </mat-form-field>
+
+
+
+
+
+
+
+
+
+
+
+          <mat-form-field style="margin-left: 20px;" hintLabel="Max 10 characters" appearance="fill">
+            <mat-label>BAIRRO</mat-label>
+            <input matInput #input maxlength="100" placeholder="estudar math"    [(ngModel)]= "bairro"  required>
+            <mat-hint align="end">{{input.value?.length || 0}}/100</mat-hint>
+          </mat-form-field>
+
+          <mat-form-field style="margin-left: 20px;" hintLabel="Max 10 characters" appearance="fill">
+            <mat-label>CEP </mat-label>
+            <input matInput #input maxlength="8" placeholder="estudar math"    [(ngModel)]= "cep"  required>
+            <mat-hint align="end">{{input.value?.length || 0}}/8</mat-hint>
+          </mat-form-field>
+
+
+
+
+
+
+          <mat-form-field style="margin-left: 20px; margin-top: 50px;" hintLabel="Max 10 characters" appearance="fill">
+            <mat-label>COMPLEMENTO </mat-label>
+            <input matInput #input maxlength="100" placeholder="estudar math"    [(ngModel)]= "complemento"  required>
+            <mat-hint align="end">{{input.value?.length || 0}}/100</mat-hint>
+          </mat-form-field>
+
+          <mat-form-field style="margin-left: 20px;" hintLabel="Max 10 characters" appearance="fill">
+            <mat-label>LOGRADOURO</mat-label>
+            <input matInput #input maxlength="100" placeholder="estudar math"    [(ngModel)]= "logradouro"  required>
+            <mat-hint align="end">{{input.value?.length || 0}}/100</mat-hint>
+          </mat-form-field>
+
+          <mat-form-field style="margin-left: 20px;" hintLabel="Max 10 characters" appearance="fill">
+            <mat-label>NUMERO</mat-label>
+            <input matInput #input maxlength="10" placeholder="estudar math"    [(ngModel)]= "numero"  required>
+            <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+          </mat-form-field>
+
+
+
+
+
+
+          <mat-form-field style="margin-left: 20px; margin-top: 50px;" hintLabel="Max 10 characters" appearance="fill">
+            <mat-label>PONTO DE REFERENCIA</mat-label>
+            <input matInput #input maxlength="100" placeholder="estudar math"    [(ngModel)]= "pontoReferencia"  required>
+            <mat-hint align="end">{{input.value?.length || 0}}/100</mat-hint>
+          </mat-form-field>
+
+          <mat-form-field style="margin-left: 20px;" hintLabel="Max 10 characters" appearance="fill">
+            <mat-label>TELEFONE</mat-label>
+            <input matInput #input maxlength="14" placeholder="estudar math"    [(ngModel)]= "telefone"  required>
+            <mat-hint align="end">{{input.value?.length || 0}}/14</mat-hint>
+          </mat-form-field>
+
+
+
+
+
+
+
+
+
+        <DIV style="text-align: center;">
+          <button type="submit" class="btn btn-success "  (click)="inserir()" >INCLUIR</button>
+          <button type="btn"    class="btn btn-secondary " (click)="limpar()">LIMPAR</button>
+        </DIV>
+        <br>
+
+
+
+        <div *ngIf="nome=='';then content else other_content">here is ignored</div>
+        <ng-template #content><div class="alert alert-danger" role="alert" style="text-align: center;  font-weight: bold;">FORMULÁRIO INVÁLIDO</div></ng-template>
+        <ng-template #other_content><div class="alert alert-primary" role="alert" style="text-align: center;  font-weight: bold;">FORMULÁRIO VÁLIDO</div></ng-template>
+
+        </mat-card-content>
+
+        <!-- </mat-card> -->
+
+
+
+
+
+
+
+
+    <!-- /////444444444///////////////// -->
+    </mat-expansion-panel>
+
+
+
+
+
+
+
+
+
+
+
+  </mat-accordion>
+
+
+
+
+
+    <br>
+
+
+
+
+
+
+
+    <div class=" mat-elevation-z8 table-overflow">
+
+
+  <DIV class="row">
+    <input style="font-size:xx-large;  text-align: center;"  (keyup)="filterData($event)"  placeholder="Pesquisar">
+    </DIV>
+
+
+      <table mat-table  matSort [dataSource]="this.dataSource">
+
+
+
+
+             <!-- Position Column -->
+             <ng-container matColumnDef="nome">
+              <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> NOME</th>
+              <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> {{element.nome | uppercase}} </td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="cpf">
+              <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;">CPF </th>
+              <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> {{element.cpf}} </td>
+            </ng-container>
+
+
+
+<!--
+        <ng-container matColumnDef="pis">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> PIS </th>
+          <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> {{element.pis}} </td>
+        </ng-container>
+
+
+
+        <ng-container matColumnDef="ctps">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> CTPS </th>
+          <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> {{element.ctps}} </td>
+        </ng-container>
+
+
+
+
+
+        <ng-container matColumnDef="vinculo">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> VÍNCULO </th>
+          <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> {{element.vinculo}} </td>
+        </ng-container>
+
+
+
+
+
+        <ng-container matColumnDef="situacao">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> SITUAÇÃO </th>
+          <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> {{element.situacao}} </td>
+        </ng-container>
+ -->
+
+
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="cargo">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> CARGO </th>
+          <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> {{element.cargo | uppercase}} </td>
+        </ng-container>
+
+
+
+
+
+        <!-- <ng-container matColumnDef="dependentes">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> DEPENDENTES </th>
+          <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> {{element.dependentes}} </td>
+        </ng-container> -->
+
+
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="dataNascimento">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> NASCIMENTO </th>
+            <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> {{element.dataNascimento | date:'dd/MM/yyyy'}} </td>
+          </ng-container>
+
+
+            <!-- Name Column -->
+        <ng-container matColumnDef="dataAdmissao">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> ADMISSÃO</th>
+          <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> {{element.dataAdmissao | date:'dd/MM/yyyy'}} </td>
+        </ng-container>
+
+
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="salarioBase">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> SALÁRIO BASE </th>
+            <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> {{element.salarioBase}} </td>
+          </ng-container>
+
+
+
+
+               <!-- Position Column -->
+               <ng-container matColumnDef="email">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> EMAIL</th>
+                <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> {{element.email}} </td>
+              </ng-container>
+
+              <!-- Name Column -->
+              <ng-container matColumnDef="bairro">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;">BAIRRO </th>
+                <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> {{element.bairro}} </td>
+              </ng-container>
+
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="cep">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;">CEP </th>
+            <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> {{element.cep}} </td>
+          </ng-container>
+
+
+
+
+
+                 <!-- Position Column -->
+        <ng-container matColumnDef="complemento">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;">COMPLEMENTO</th>
+          <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> {{element.complemento}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="logradouro">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;">LOGRADOURO</th>
+          <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> {{element.logradouro}} </td>
+        </ng-container>
+
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="numero">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> NÚMERO</th>
+      <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> {{element.numero}} </td>
+    </ng-container>
+
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="pontoReferencia">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;">PONTO DE REFERÊNCIA</th>
+      <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> {{element.pontoReferencia}} </td>
+    </ng-container>
+
+
+<!-- Name Column -->
+<ng-container matColumnDef="telefone">
+  <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> TELEFONE</th>
+  <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;"> {{element.telefone}} </td>
+</ng-container>
+
+
+
+
+
+
+
+
+        <ng-container matColumnDef="acao"  >
+          <th mat-header-cell *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;">AÇÃO</th>
+          <td  mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 20px;" >
+            <button type="button" class="btn btn-info "  (click)="editar(element)" > <i class="bi bi-pencil-square "></i></button>
+            <button type="button" class="btn btn-danger"   (click)="desativar(element)" >  <i class="bi bi-x-square " ></i> </button>
+
+
+          </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator #paginator
+    [pageSize]="9" >
+    </mat-paginator>
+
+    </div>
+
+
+
+
+    <br><br><br><br><br>
+
+
+
+  </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

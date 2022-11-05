@@ -1,0 +1,83 @@
+@media (min-width: 350px) {
+
+.conteiner-overflow-celular {
+  height: auto;
+  width: auto;
+}
+
+
+.tamanho_texto_celular{
+
+  font-size: 18px;
+}
+
+ }
+
+
+
+
+
+
+
+
+ @media (min-width: 900px) {
+
+  .tamanho_texto_desktop{
+    font-size: 30px;
+  }
+
+
+
+.example-container .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+.example-right-align {
+  text-align: right;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.example-right-align {
+  -moz-appearance: textfield;
+}
+
+
+
+/* PARA A TABELA DO PRODUTO */
+.table-overflow {
+  max-height:600px;
+/* //  overflow-x: hidden; */
+  /* overflow-y: scroll; */
+
+}
+
+
+/* .conteiner-overflow {
+  height: 1108px;
+  width: 2422px;
+  /* margin-left: 10px; */
+  /* padding: 15px; */
+  /* border: 1px solid #444;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+} */
+
+
+
+table {
+  width: 100%;
+}
+
+
+.example-card {
+  max-width: 400px;
+}
+
+
+
+ }

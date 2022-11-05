@@ -1,0 +1,52 @@
+
+
+
+
+@media (min-width: 350px) {
+
+  .conteiner-overflow-celular {
+    height: auto;
+    width: auto;
+  }
+
+
+  .tamanho_texto_celular{
+
+    font-size: 20px;
+  }
+
+   }
+
+
+
+
+
+
+ @media (min-width: 900px) {
+
+
+
+
+    .tamanho_texto_desktop{
+      font-size: 30px;
+    }
+
+
+
+
+/* .conteiner-overflow {
+   height: hidden;
+  width: 2712px;
+  margin-left: 0px;
+
+  /* padding: 15px; */
+  /* border: 1px solid #444;
+
+
+
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+} */
+
+ }

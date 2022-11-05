@@ -1,0 +1,865 @@
+
+<DIV class="row conteiner-overflow">
+  <div class="container" style="background: rgb(52, 87, 228)">
+
+
+
+
+
+      <mat-progress-bar value="primary"  mode="query"></mat-progress-bar>
+
+
+
+      <!-- <p
+        class="alert alert-primary"
+        role="alert"
+        style="
+          background: rgb(55, 55, 55);
+          font-size: 40px;
+          text-align: center;
+          font-weight: bold;
+          color: cornsilk;
+          margin-bottom: 0px;
+          margin-top: 10px;
+        "
+      > -->
+
+
+<!-- //LAVAJATO -->
+
+      <!-- <marquee behavior="alternate" SCROLLAMOUNT=20 style="background: rgb(55, 55, 55);  font-size: 40px;">
+
+ <p  *ngIf="this.valorRCB<META  " style="margin-top: 10px; color: rgb(255, 255, 255); font-weight: bold;">       META: {{META  | currency : 'BRL'}} </p>
+
+ <p  *ngIf="this.valorRCB>=META  " style="margin-top: 10px; color:rgb(0, 255, 8); font-weight: bold;">  PARABÉNS-----=>META: {{META    | currency : 'BRL'}}<=-----PARABÉNS</p>
+
+ </marquee> -->
+
+
+<!-- //LAVAJATO -->
+
+
+      <!-- </p> -->
+
+
+<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+
+
+
+
+
+
+
+<!-- //LAVAJATO -->
+
+          <div class="col-12" style="margin-bottom: 3px">
+            <mat-card class="example-card">
+              <mat-card-title style="text-align: center"
+                >LAVADOR</mat-card-title
+              >
+
+
+
+
+                <mat-radio-group aria-labelledby="example-radio-group-label"  class="example-radio-group"  [(ngModel)]="this.venda.vendedor">
+                                  <mat-radio-button class="example-radio-button" *ngFor="let item of this.vendedores" [value]="item" >
+                                   {{item  | uppercase}}
+                                 </mat-radio-button>
+
+
+                </mat-radio-group>
+
+
+            </mat-card>
+          </div>
+
+<!-- //LAVAJATO -->
+
+
+<!-- //LAVAJATO -->
+
+<!-- <div class="col-12" style="margin-bottom: 3px">
+  <mat-card class="example-card">
+    <mat-card-title style="text-align: center"
+      >FORMA DE PAGAMENTO</mat-card-title
+    >
+
+    <mat-card-content>
+      <form [formGroup]="formVenda">
+        <mat-radio-group    aria-label="Select an option"       formControlName="forma"         >
+          <mat-radio-button             value="PIX"            style="margin-right:85px; margin-bottom: 5px"     >PIX</mat-radio-button     >
+          <mat-radio-button            value="DINHEIRO"       style="margin-right: 42px; margin-bottom: 5px"     >DINHEIRO</mat-radio-button >
+
+
+<!-- //LAVAJATO -->
+          <!-- <mat-radio-button            value="DÉBITO"      style="margin-right: 55px; margin-bottom: 5px"     >DÉBITO</mat-radio-button  >
+          <mat-radio-button            value="CRÉDITO"    style="margin-bottom: 5px"    >CRÉDITO</mat-radio-button          > --
+
+
+
+        </mat-radio-group>
+      </form>
+
+
+
+
+ <div class="row">
+
+<div class="col-3">
+<input  type="number"  class="form-control"  id="acrescimo"  [(ngModel)]="this.venda.pix "   placeholder="QUANTIDADE"  mask="separator.2" style="margin-top: 5px; text-align: center;"  />
+</div>
+
+<div class="col-3">
+<input  type="number"  class="form-control"  id="acrescimo"  [(ngModel)]="this.venda.dinheiro "   placeholder="QUANTIDADE"  mask="separator.2" style="margin-top: 5px; text-align: center;"  />
+</div>
+<div class="col-3">
+<input  type="number"  class="form-control"  id="acrescimo"  [(ngModel)]="this.venda.debito "   placeholder="QUANTIDADE"  mask="separator.2" style="margin-top: 5px; text-align: center;"  />
+</div>
+<div class="col-3">
+<input  type="number"  class="form-control"  id="acrescimo"  [(ngModel)]="this.venda.credito "   placeholder="QUANTIDADE"  mask="separator.2" style="margin-top: 5px; text-align: center;"  />
+</div>
+
+</div>
+
+
+
+
+    </mat-card-content>
+  </mat-card>
+</div> -->
+
+<!-- //LAVAJATO -->
+
+<div class="col-12" style="margin-bottom: 3px">
+  <mat-card class="example-card">
+    <mat-card-title style="text-align: center"
+      >PLACA</mat-card-title
+    >
+    <!-- <mat-card-subtitle style="text-align: center;">SHELDON KERME</mat-card-subtitle> -->
+
+    <mat-card-content>
+
+
+
+
+      <form [formGroup]="formVenda">
+
+
+<!-- //INSERI POR CAUSA DA AUTOESCOLA -->
+<!-- <label   class="computador_teste1" >INSIRA CPF DO CLIENTE</label> -->
+<!-- <div  class="form-floating mb-3"> -->
+
+<!-- <input type="text" class="form-control computador_teste1" mask="000.000.000-00" formControlName="cpf" placeholder="888.111.222-10" > -->
+
+
+
+<!-- <h5 class="card-header" class="alert alert-danger computador_teste2" role="alert"  style="font-size: 20px; font-weight: bold; text-align: center;"  >
+-->
+
+
+
+<h5 class="card-header" class="alert alert-danger computador_teste2" role="alert"  style="font-size: 20px; font-weight: bold; text-align: center;" [hidden]="this.formVenda.value.cliente!='CLIENTE NÃO INFORMADO'" >
+{{this.formVenda.value.cliente | uppercase}}
+</h5>
+
+<h5 class="card-header" class="alert alert-success " role="alert" style="font-size: 20px; font-weight: bold; text-align: center;" [hidden]="this.formVenda.value.cliente=='CLIENTE NÃO INFORMADO'"  >
+{{this.formVenda.value.cliente | uppercase}}
+</h5>
+
+
+
+
+<div class="mat-elevation-z8 table-overflow">
+
+<DIV class="row">
+
+<input   id="item"      [(ngModel)]="formVenda.value.codigo"    style="font-size: xx-large; text-align: center"       (keyup)="filterDataClientes($event)"    placeholder="Pesquisar"      />
+
+</DIV>
+
+
+
+<table mat-table matSort [dataSource]="this.dataSourceClientes">
+<!-- Position Column -->
+
+
+<ng-container matColumnDef="nome">
+  <th    mat-header-cell        mat-sort-header    *matHeaderCellDef   style="    text-align: left;  color: rgb(255, 255, 255); font-weight: bold; font-size: 10px; " >
+    NOME
+  </th>
+  <td  mat-cell  *matCellDef="let element"  style=" text-align: left; color: rgb(255, 255, 255); font-weight: bold; font-size: 10px;" >
+    {{ element.nome }}
+  </td>
+</ng-container>
+
+
+
+<ng-container matColumnDef="acao">
+  <th  mat-header-cell   *matHeaderCellDef  style=" text-align: left; color: rgb(255, 255, 255); font-weight: bold; font-size: 10px; " >   AÇÃO </th>
+  <td  mat-cell  *matCellDef="let element"  style=" text-align: left; color: rgb(255, 255, 255);  font-weight: bold; font-size: 10px;  " >
+    <button                type="button"                class="btn btn-success"                (click)="selecionarCliente(element)"              > + </button>
+  </td>
+</ng-container>
+
+
+
+
+
+<tr  mat-header-row  *matHeaderRowDef="displayedColumnsClientes; sticky: true" ></tr>
+<tr  mat-row   *matRowDef="let row; columns: displayedColumnsClientes" ></tr>
+</table>
+
+<mat-paginator #paginatorClientes   [pageSize]="3"  >    </mat-paginator>
+
+</div>
+
+
+
+
+
+<!--
+</h5> -->
+
+
+
+<!-- <h5 class="card-header" class="alert alert-danger computador_teste2" role="alert"  style="font-size: 20px; font-weight: bold; text-align: center;" [hidden]="this.formVenda.value.cliente!='CLIENTE NÃO INFORMADO'" >
+{{this.formVenda.value.cliente | uppercase}}
+</h5>
+
+<h5 class="card-header" class="alert alert-success " role="alert" style="font-size: 20px; font-weight: bold; text-align: center;" [hidden]="this.formVenda.value.cliente=='CLIENTE NÃO INFORMADO'"  >
+{{this.formVenda.value.cliente | uppercase}}
+</h5> -->
+
+
+
+
+<!-- </div> -->
+<!-- //INSERI POR CAUSA DA AUTOESCOLA -->
+
+
+
+
+
+      </form>
+
+
+    <script> swal("Hello world!"); </script>
+
+
+    </mat-card-content>
+  </mat-card>
+</div>
+
+
+
+
+
+
+<!-- //LAVAJATO -->
+
+
+          <!-- <div class="col-12" style="margin-bottom: 3px">
+            <mat-card class="example-card">
+              <mat-card-title style="text-align: center"
+                >DEMANDA</mat-card-title
+              >
+
+              <mat-card-content>
+                <form [formGroup]="formVenda">
+                  <mat-radio-group
+                    aria-label="Select an option"
+                    formControlName="demanda"
+                  >
+                    <mat-radio-button
+                      value="atacado"
+                      style="margin-left: 30; margin-bottom: 5px"
+                      >ATACADO</mat-radio-button
+                    >
+                    <mat-radio-button
+                      value="varejo"
+                      style="margin-left: 30; margin-bottom: 5px"
+                      >VAREJO</mat-radio-button
+                    >
+                  </mat-radio-group>
+                </form>
+              </mat-card-content>
+            </mat-card>
+          </div> -->
+
+
+<!-- //LAVAJATO -->
+
+
+
+
+
+<!-- //LAVAJATO -->
+
+          <!-- <div class="col-12">
+            <mat-accordion>
+              <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header style="background: rgb(100, 32, 0);font-size: 25px; font-weight: bold; ">
+                  <mat-panel-title style="  margin-left: 140px;">
+                    FORMAS DE PAGAMENTO
+                  </mat-panel-title>
+                  
+
+                </mat-expansion-panel-header>
+
+
+      <div class=" table-overflow" style="font-size: 30px; font-weight: bold;">
+        <table
+          class="table table-dark table-bordered table-striped computador_teste3 computador_teste4 cel_tabela text-center"
+        >
+          <thead>
+            <tr>
+              <th scope="col">NOME</th>
+              <th scope="col">VALOR</th>
+            </tr>
+          </thead>
+          <tbody>
+
+
+            <tr *ngFor="let cliente of this.vendaPorForma">
+              <td>PIX</td>
+              <td>{{ cliente.pix }}</td><br>
+            </tr>
+
+
+            <tr *ngFor="let cliente of this.vendaPorForma">
+              <td>DINHEIRO</td>
+              <td>{{ cliente.dinheiro }}</td><br>
+            </tr>
+
+            <tr *ngFor="let cliente of this.vendaPorForma">
+              <td>DEBITO</td>
+              <td>{{ cliente.debito }}</td><br>
+            </tr>
+
+            <tr *ngFor="let cliente of this.vendaPorForma">
+              <td>CREDITO</td>
+              <td>{{ cliente.credito }}</td><br>
+            </tr>
+
+
+            <tr *ngFor="let cliente of this.vendaPorForma">
+              <td>TOTAL</td>
+              <td>{{ cliente.pix+cliente.dinheiro +cliente.debito+cliente.credito }}</td><br>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+
+              </mat-expansion-panel>
+
+
+
+              <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header style="background: rgb(3, 12, 84);font-size: 25px; font-weight: bold; ">
+                  <mat-panel-title style="  margin-left: 140px;" > VENDEDORES </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <div class="table-overflow" style="font-size: 30px; font-weight: bold;">
+                  <table
+                    class="table table-dark table-bordered table-striped computador_teste3 computador_teste4 cel_tabela text-center"
+                  >
+                    <thead>
+                      <tr>
+                        <th scope="col">NOME</th>
+                        <th scope="col">VALOR</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of this.vendaPorVendedor">
+                        <td>{{ item._id.vendedor | uppercase}}</td>
+                        <td>{{ item.count | number }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </mat-expansion-panel>
+
+              <div class="row">
+
+                <button    style="font-size: 25px; font-weight: bold;  "    type="button"        class="btn btn-danger btn-lg"       > DESPESAS  :   {{this.valorDESPESA  }}    </button>
+
+                <button    style="font-size: 25px; font-weight: bold;  "    type="button"        class="btn btn-success btn-lg"        (click)="abrirCaixa()" >     ABRIR O CAIXA  : {{this.valorAberturaCaixa}}    </button>
+
+
+                <button    style="font-size: 25px; font-weight: bold;  "    type="button"        class="btn btn-dark btn-lg"        (click)="inserirProduto()"      > INSERIR PRODUTO </button>
+
+            </div>
+
+
+
+
+            </mat-accordion>
+
+
+
+
+
+          </div> -->
+
+
+
+
+<!-- //LAVAJATO -->
+
+
+
+
+
+
+
+
+
+
+
+<DIV class="row">
+
+
+            <mat-card class="example-card">
+              <mat-card-title style="text-align: center"
+                >PRODUTOS</mat-card-title
+              >
+              <!-- <mat-card-subtitle style="text-align: center;">fsdfsd</mat-card-subtitle> -->
+
+              <mat-card-content>
+
+<!-- //LAVAJATO -->
+                <!-- //TAMANHOS -->
+                <!-- <form [formGroup]="formVenda">
+                  <mat-radio-group
+                    aria-label="Select an option"
+                    formControlName="tamanho"
+                  >
+                    <mat-radio-button value="P">P</mat-radio-button>
+                    <mat-radio-button value="M">M</mat-radio-button>
+                    <mat-radio-button value="G">G</mat-radio-button>
+                    <mat-radio-button value="GG">GG</mat-radio-button>
+                    <mat-radio-button value="36">36</mat-radio-button>
+                    <mat-radio-button value="38">38</mat-radio-button>
+                    <mat-radio-button value="40">40</mat-radio-button>
+                    <mat-radio-button value="42">42</mat-radio-button>
+                    <mat-radio-button value="44">44</mat-radio-button>
+                    <mat-radio-button value="46">46</mat-radio-button>
+                    <mat-radio-button value="48">48</mat-radio-button>
+                    <mat-radio-button value="U">U</mat-radio-button>
+                  </mat-radio-group>
+                </form> -->
+                <!-- //TAMANHOS -->
+
+<!-- //LAVAJATO -->
+
+                <!-- ////////////////////////////////////////////////////// -->
+
+
+
+
+
+                <div class="mat-elevation-z8 table-overflow">
+
+                  <!-- //LAVAJATO -->
+
+
+                  <!-- <DIV class="row">
+
+                    <input   type="number"     class="form-control"        [(ngModel)]="formVenda.value.quantidade"   placeholder="QUANTIDADE"  mask="separator.2"    style="margin-top: 5px; text-align: center;"    />
+
+                    <input   id="item"      [(ngModel)]="formVenda.value.codigo"    style="font-size: xx-large; text-align: center"       (keyup)="filterData($event)"    placeholder="Pesquisar"      />
+
+
+
+
+                  </DIV> -->
+
+                  <!-- //LAVAJATO -->
+
+                  <table mat-table matSort [dataSource]="this.dataSource">
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="codigo">
+                      <th
+                        mat-header-cell
+                        mat-sort-header
+                        *matHeaderCellDef
+                        style="
+                          text-align: left;
+                          color: rgb(255, 255, 255);
+                          font-weight: bold;
+                          font-size: 10px;
+                        "
+                      >
+                        CÓDIGO
+                      </th>
+                      <td
+                        mat-cell
+                        *matCellDef="let element"
+                        style="
+                          text-align: left;
+                          color: rgb(255, 255, 255);
+                          font-weight: bold;
+                          font-size: 10px;
+                        "
+                      >
+                        {{ element.codigo }}
+                      </td>
+                    </ng-container>
+
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="descricao">
+                      <th
+                        mat-header-cell
+                        mat-sort-header
+                        *matHeaderCellDef
+                        style="
+                          text-align: left;
+                          color: rgb(255, 255, 255);
+                          font-weight: bold;
+                          font-size: 10px;
+                        "
+                      >
+                        DESCRIÇÃO
+                      </th>
+                      <td
+                        mat-cell
+                        *matCellDef="let element"
+                        style="
+                          text-align: left;
+                          color: rgb(255, 255, 255);
+                          font-weight: bold;
+                          font-size: 10px;
+                        "
+                      >
+                        {{ element.descricao }}
+                      </td>
+                    </ng-container>
+
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="precoVendaVarejo">
+                      <th
+                        mat-header-cell
+                        mat-sort-header
+                        *matHeaderCellDef
+                        style="
+                          text-align: left;
+                          color: rgb(255, 255, 255);
+                          font-weight: bold;
+                          font-size: 10px;
+                        "
+                      >
+                        P.VENDA.VAR
+                      </th>
+                      <td
+                        mat-cell
+                        *matCellDef="let element"
+                        style="
+                          text-align: left;
+                          color: rgb(255, 255, 255);
+                          font-weight: bold;
+                          font-size: 10px;
+                        "
+                      >
+                        {{ element.precoVendaVarejo | number: ".2-2"}}
+                      </td>
+                    </ng-container>
+
+
+
+
+                    <!-- P.VENDA.ATA -->
+                    <ng-container matColumnDef="precoVendaAtacado">
+                      <th
+                        mat-header-cell
+                        mat-sort-header
+                        *matHeaderCellDef
+                        style="
+                          text-align: left;
+                          color: rgb(255, 255, 255);
+                          font-weight: bold;
+                          font-size: 10px;
+                        "
+                      >
+                        P.VENDA.ATA
+                      </th>
+                      <td
+                        mat-cell
+                        *matCellDef="let element"
+                        style="
+                          text-align: left;
+                          color: rgb(255, 255, 255);
+                          font-weight: bold;
+                          font-size: 10px;
+                        "
+                      >
+                        {{ element.precoVendaAtacado | number: ".2-2"}}
+                      </td>
+                    </ng-container>
+
+
+
+
+                    <ng-container matColumnDef="acao">
+                      <th
+                        mat-header-cell
+                        *matHeaderCellDef
+                        style="
+                          text-align: left;
+                          color: rgb(255, 255, 255);
+                          font-weight: bold;
+                          font-size: 10px;
+                        "
+                      >
+                        AÇÃO
+                      </th>
+                      <td
+                        mat-cell
+                        *matCellDef="let element"
+                        style="
+                          text-align: left;
+                          color: rgb(255, 255, 255);
+                          font-weight: bold;
+                          font-size: 10px;
+                        "
+                      >
+
+
+
+
+
+
+
+                        <button
+                          type="button"
+                          class="btn btn-success"
+                          (click)="incluirCesta(element)"
+                        >
+                          +
+                        </button>
+                      </td>
+                    </ng-container>
+
+                    <tr
+                      mat-header-row
+                      *matHeaderRowDef="displayedColumns; sticky: true"
+                    ></tr>
+                    <tr
+                      mat-row
+                      *matRowDef="let row; columns: displayedColumns"
+                    ></tr>
+                  </table>
+
+                  <mat-paginator #paginator
+                  [pageSize]="16"
+                  >
+                   </mat-paginator>
+
+                </div>
+
+                <!-- ////////////////////////////////////////////////////// -->
+              </mat-card-content>
+            </mat-card>
+
+
+</DIV>
+
+
+            <mat-card class="example-card" style="margin-right: 10px">
+
+
+              <div class="row">
+                <button style="font-weigth:bold; font-size: 25px " type="button" class="btn btn-danger"     (click)="excluircesta()">  <i class="bi bi-x-square " ></i>EXCLUIR CESTA</button>
+
+
+
+
+                </div>
+
+
+
+
+ <br>
+
+
+
+              <!-- <mat-card-title style="text-align: center">CESTA</mat-card-title> -->
+              <!-- <mat-card-subtitle style="text-align: center;">fdgdf</mat-card-subtitle> -->
+
+              <mat-card-content>
+                <!-- <button type="button" class="btn btn-success"     (click)="vender()">+</button> -->
+                <!-- CARRINHAO INICIO -->
+
+                <!-- ACAO TIRADA  (click)="excluircesta()" -->
+                <!-- <button  style="font-weight: bolder;" type="button" class="btn btn-danger"  ><i class="bi bi-cart-x-fill table-overflow computador_botoes "></i> TECLE F5 PARA CANCELAR</button> -->
+
+                <div class="row table-overflow2">
+                  <table
+                    class="table table-dark table-bordered computador_teste2"
+                  >
+                    <thead>
+                      <tr>
+                        <th scope="col">CÓDIGO</th>
+                        <th scope="col">DESCRIÇÃO</th>
+                        <th scope="col">QUANTIDADE</th>
+                        <th scope="col">VALOR UNITÁRIO</th>
+                        <!-- <th scope="col">SUBTOTAL</th> -->
+                        <!-- <th scope="col">DEMANDA</th>
+                        <th scope="col">TAMANHO</th>
+                        <th scope="col" style="font-weight: bold;">AUM</th>
+                        <th scope="col">DIM</th>
+                        <th scope="col">EXC</th> -->
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <tr *ngFor="let venda of venda.itens">
+                        <td>{{ venda.codigo }}</td>
+                        <td>{{ venda.descricao }}</td>
+                        <td>{{ venda.quantidade }}</td>
+                        <td>{{ venda.valorUnitario }}</td>
+                        <!-- <td>{{ venda.subtotal }}</td> -->
+
+
+                        <!-- <td>{{ venda.demanda }}</td>
+                        <td>{{ venda.tamanho }}</td>
+
+                        <td>
+                          <button
+                            type="button"
+                            class="btn btn-primary"
+                            (click)="Aumentaritem(venda)"
+                          >
+                           <i class="bi bi-cart-plus computador_botoes"></i>
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            type="button"
+                            class="btn btn-warning"
+                            (click)="Diminuiritem(venda)"
+                          >
+                              <i class="bi bi-cart-dash computador_botoes"></i>
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            type="button"
+                            class="btn btn-danger"
+                            (click)="excluiritem(venda)"
+                          >
+                            <i class="bi bi-cart-x computador_botoes"></i>
+                          </button>
+                        </td> -->
+
+
+
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+
+                  <!--   CONSULTA PRODUTO   MD->CELULAR NO MODO MONITOR   SM->MEUTABLET  XS->CELULAR MONITOR-->
+
+                  <div class="form-group">
+                    <div class="row computador_teste2">
+                      <div
+                        class="alert alert-primary alert computador_teste2"
+                        role="alert"
+                      >
+                        <label
+                          for="desconto"
+                          class="control-label computador_teste2"
+                          >ITENS:</label
+                        >
+
+                        {{ this.venda.totalItens }}
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div
+                        class="alert alert-primary computador_teste2"
+                        role="alert"
+                      >
+                        SUBTOTAL DA VENDA: {{ this.venda.subtotal }}
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <label style="font-weight: bold; font-size: 18px"
+                        >DESCONTO</label
+                      >
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="desconto"
+                        [(ngModel)]="this.venda.desconto"
+                        placeholder="DESCONTO"
+                        mask="separator.2"
+                        style="margin-bottom: 10px"
+                      />
+                    </div>
+
+                    <div class="row">
+                      <label style="font-weight: bold; font-size: 18px"
+                        >ACRÉSCIMO</label
+                      >
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="acrescimo"
+                        [(ngModel)]="this.venda.acrescimo"
+                        placeholder="ACRÉSCIMO"
+                        mask="separator.2"
+                        style="margin-bottom: 10px"
+                      />
+                      <!-- (keydown.enter)="buscarvaleTrocaporId()" -->
+                    </div>
+
+                    <div class="row">
+                      <div
+                        class="alert alert-primary computador_teste2"
+                        role="alert"
+                      >
+                        TOTAL DA VENDA:{{ this.venda.total | number: ".2-2" }}
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-4"></div>
+                      <button   type="button"  class="btn btn-success btn-lg"  (click)="vender()" >
+                         <i class="bi bi-cash-coin computador_botoes">VENDER</i>
+                      </button>
+                    </div>
+                  </div>
+
+
+
+
+                <BR />
+                <BR />
+
+                <!-- </div> -->
+
+                <!-- CARRINHO FIM -->
+              </mat-card-content>
+            </mat-card>
+
+
+
+
+
+
+
+
+  </div>
+
+  <!-- ////////////////////////////////////////////////// -->
+
+  <!-- ///////////////////////////////////////444444444444444444444444444444444444/////////// -->
+</DIV>
+
+

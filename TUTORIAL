@@ -1,0 +1,349 @@
+
+PARA TRABALHAR COM ANGULAR INSTALAR O PLUGIN==>  Angular Extension Pack
+
+
+
+# PARA ACESSAR O COMPASS E O MONGODB
+NOMEDOPROJETO: GESTAO
+
+MONGODB
+ USERNAME: gestao
+ PASSWORD:mQP9ofYvsZjiCqph
+
+
+compass     mongodb+srv://gestao:mQP9ofYvsZjiCqph@cluster0.4ep0j.mongodb.net/gestao
+mongoshell  mongosh "mongodb+srv://cluster0.4ep0j.mongodb.net/gestao" --apiVersion 1 --username gestao
+
+
+
+
+
+db.estatisticas.deleteMany({descricao:'-3.1358976 -59.998208'})  para deletar varios registros no mongo;
+
+
+DEPLOY AUTOMÁTICO:#############################################################################################################################################
+
+ESSE QUE EUDEVO USARRRRRRRRRRRRRRRRRR
+ESSE QUE EUDEVO USARRRRRRRRRRRRRRRRRR
+ESSE QUE EUDEVO USARRRRRRRRRRRRRRRRRR
+
+PRIMEIRA VEZ:
+   git init
+   git remote add minhamaquina https://github.com/skerme/lavajatodovilarejo.git
+   git add .
+   git commit -am "inicio"                   // esse "a" eh para nao precisar  do "git ." no caso de nao ter arquivo novo.
+   git push -u minhamaquina master
+
+PRÓXIMAS:
+   git add .
+   git commit -am "inicio"                   // esse "a" eh para nao precisar  do "git ." no caso de nao ter arquivo novo.
+   git push -u minhamaquina master
+DEPLOY AUTOMÁTICO:#############################################################################################################################################
+
+ESSE QUE EUDEVO USARRRRRRRRRRRRRRRRRR
+ESSE QUE EUDEVO USARRRRRRRRRRRRRRRRRR
+ESSE QUE EUDEVO USARRRRRRRRRRRRRRRRRR
+
+
+
+
+PARA SALVAR NO GIT:
+git init
+git remote add minhamaquina https://github.com/skerme/lavajatodovilarejo.git
+git add .
+git commit -am "inicio"                   // esse "a" eh para nao precisar  do "git ." no caso de nao ter arquivo novo.
+git push -u minhamaquina master
+
+
+heroku login
+heroku git:remote -a lavajatodovilarejo
+git push heroku master
+heroku open
+
+
+# //CASO EU QUEIRA SO ATUALIZAR
+git add .
+git commit -am "inicio"                   // esse "a" eh para nao precisar  do "git ." no caso de nao ter arquivo novo.
+git push -u minhamaquina master
+
+heroku login
+heroku git:remote -a lavajatodovilarejo
+git push heroku master
+# //CASO EU QUEIRA SO ATUALIZAR
+
+
+ajustes antes de publicar no heroku:  https://imasters.com.br/angular/publicando-uma-aplicacao-angular-no-heroku
+
+#ajustes para a aplicacao nao dormir
+https://coffops.com/como-manter-up-apps-gratuitas-no-heroku/
+https://www.misselsoft.com.br/blog/2020/06/kaffeine-como-manter-seu-app-sempre-online-no-heroku/
+#ajustes para a aplicacao nao dormir
+
+# ////////////////////////////////////////////////////PASSOS INICIAIS///////////////////////////////////////////////////////////////////////////////////
+
+0.nodejs    + vsc  + Angular Extension Pack
+1.npm install -g @angular/cli
+2. ng new teste
+3.cd teste
+  ng serve -o
+4. npm install bootstrap
+   em angular.json ==>
+   "node_modules/bootstrap/dist/css/bootstrap.min.css",
+   "src/styles.css"
+5.ng add @angular/material
+
+
+
+
+
+
+
+
+#para usar icons do bootstrap
+npm i bootstrap-icons
+INSERIR NO INDEX.HTML  ==>   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+                                </head>
+
+
+# PARA USAR ALERTS CUSTOMIZADOS
+
+ https://sweetalert2.github.io/#download
+
+
+
+# para decodificar o token
+https://medium.com/xp-inc/angular-decode-payload-jwt-6d2618ec444d
+npm i jwt-decode --save
+import jwt_decode from 'jwt-decode';
+VAR   x=jwt_decode(this.token);
+
+
+#instalar ngx-bootstrap
+1. npm install ngx-bootstrap --save
+2. inserir no modulo==>
+    BsDatepickerModule.forRoot(),
+    import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+3. inserir no index.html
+   <link rel="stylesheet" href="https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css">
+
+4. component
+     //ngx-bootrstrap 3333333333/total 5
+  bsRangeValue: Date[];
+
+    //ngx-bootrstrap4444444444/total 5
+
+     var x= new Date()
+     x.setDate(x.getDate()+1)
+    this.bsRangeValue = [x, x];
+5. html
+
+
+   <div style="text-align: center; "  >
+            <input style="text-align: center; font-size: 25px; font-weight: bold;"  class="form-control" #drp="bsDaterangepicker" bsDaterangepicker [(ngModel)]="bsRangeValue"  [bsConfig]="{ rangeInputFormat : 'DD-MM-YYYY', dateInputFormat: 'DD-MM-YYYY', showWeekNumbers: true }" >
+          </div>
+#instalar ngx-bootstrap
+
+
+#para gerar codigo de barras
+
+npm i jsbarcode
+
+no .ts inserir       JsBarcode("#ean-13", "1234567890128", {format: "ean13"});
+no .html inserir     <svg id="ean-13"></svg>
+#para gerar codigo de barras
+
+
+# ///////////////////////////////////////////////////////////////////////////////////////////////////
+19. PARA GERAR ARQUIVO PDF.
+JSPDF ==> https://www.npmjs.com/package/jspdf
+
+import { jsPDF } from "jspdf";
+npm install jspdf
+
+APRENDIZADO: https://imasters.com.br/front-end/gerando-pdfs-com-js
+# ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+# poder ser o IP
+npm i public-ip
+
+import * as publicIp from 'public-ip';
+# poder ser o IP
+
+
+
+
+
+
+
+
+
+
+1. instalar visual studio code.--> https://code.visualstudio.com/
+2. instalar nodejs versao lts. --> https://angular.io/guide/setup-local
+3. No VSC, abrir o terminal e chegar do diretorio raiz.
+   No power shell como administrador.-->Get-ExecutionPolicy( para saber qual a politica)
+   Politicas existente.--> https://social.technet.microsoft.com/wiki/pt-br/contents/articles/29932.como-habilitar-a-execucao-de-scripts-em-powershell.aspx
+   alterar a politica.--> Set-ExecutionPolicy unrestricted
+
+4. ng --version(p/verificar se ja existe o angular--> caso nao exista.--> npm install -g @angular/cli)
+
+
+5. ng new myapp(cria o projeto)
+6. cd ferramentaria
+7. ng serve -o(executa o projeto que acabou de ser criado)
+8. npm install bootstrap
+   em angular.json ==>
+   "node_modules/bootstrap/dist/css/bootstrap.min.css",
+   "src/styles.css"
+9. ng g c orcamento
+
+10. PARA USAR FORMULARIO REATIVO
+    INSERIR   "ReactiveFormsModule,"     EM "imports: ["
+
+11. npm install ngx-bootstrap(instalar ngxbootstrap)
+    entro no site para aprender a usar o bsdatapicker(https://valor-software.com/ngx-bootstrap/#/)
+    ng add ngx-bootstrap  --component datepicker  (ISSO VAI INSERIR ARQUIVOS NO app.module.ts)
+
+12. EM "app.component.html" INSERIR    <app-orcamento></app-orcamento>
+
+
+
+13. PARA O MENU FUNCIONAR
+
+NO ARQUIVO ANGULAR.JSON INSERIR:
+
+ "scripts": [
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
+
+14. PARA O NAVBAR RECOLHER:  INSERIR NA FUNCAO QUE VAI SER CHAMADA AO CLICAR EM UMA OPCAO DO MENU.
+
+
+ //2.1 PARA O MENU NO CELULAR RECUAR APOS ESCOLHER A OPCAO  11
+    let element: HTMLElement = document.getElementsByClassName( 'navbar-toggler' )[ 0 ] as HTMLElement;
+    if ( element.getAttribute( 'aria-expanded' ) == 'true' ) {
+        element.click();
+                                                             }
+    //2.1 PARA O MENU NO CELULAR RECUAR APOS ESCOLHER A OPCAO  11
+
+15. PARA UASR MASCARAS:
+npm install --save ngx-mask
+INSERIR EM APP.MODULE.TS:
+             import { NgxMaskModule, IConfig } from 'ngx-mask' // PARA USAR MASCARAS
+             NgxMaskModule.forRoot() // PARA USAR MASCARAS
+
+SITE: https://www.npmjs.com/package/ngx-mask
+
+
+16. inserir EM APP.MODULE.TS
+ providers: [
+
+    {provide: LocationStrategy, useClass: HashLocationStrategy}  // 2para nao ter problema ao dar o refrash
+
+
+  ]
+
+
+  17. PARA OS NUMEROS APARECEREM NO PADRAO NACIONAL:
+
+import { HttpClientModule } from '@angular/common/http';
+import { registerLocaleData } from '@angular/common';  //PARA APARECER NO PADRAO BRASILEIRO DE MOEDA E NUMERO
+import ptBr from '@angular/common/locales/pt';        //PARA APARECER NO PADRAO BRASILEIRO DE MOEDA  E NUMERO
+
+registerLocaleData(ptBr);                              //PARA APARECER NO PADRAO BRASILEIRO DE MOEDA E NUMERO
+@NgModule({
+
+
+
+  providers: [
+
+    { provide: LOCALE_ID, useValue: 'pt' },             //PARA APARECER NO PADRAO BRASILEIRO DE MOEDA E NUMERO
+
+
+
+
+18. PARA PODER USAR ICONS DO BOOTSTRAP:
+                                       npm i bootstrap-icons
+
+   INSERIR NO INDEX.HTML  ==>   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+                                </head>
+
+
+19. PARA GERAR ARQUIVO PDF.
+JSPDF ==> https://www.npmjs.com/package/jspdf
+
+import { jsPDF } from "jspdf";
+npm install jspdf
+
+APRENDIZADO: https://imasters.com.br/front-end/gerando-pdfs-com-js
+
+
+
+
+20. //   HostListener('click') myClick(){ } é exatamente o mesmo que (click)="myClick()"
+ // HostBinding('value') myValue; é exatamente o mesmo que [value]="myValue"
+
+===============================================================================
+
+
+
+
+
+
+
+// 3.npm install ngx-mask ==> para usar mascaras; site  https://jsdaddy.github.io/ngx-mask-page/main   ==> repositorio https://github.com/JsDaddy/ngx-mask
+
+
+// 4. PARA O bootstrap e o ngxbootstrap funcionar sem internet  EU TENHO QUE INSERIR NO ARQUIVO  styles.css
+  @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+@import  "../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css";
+
+
+
+5.import { LOCALE_ID } from '@angular/core';  // para apresentar MOEDA
+  import localePt from '@angular/common/locales/pt';  // para apresentar MOEDA
+  import {registerLocaleData} from '@angular/common';   // para apresentar MOEDA
+  registerLocaleData(localePt)   // para apresentar MOEDA
+
+  providers: [{provide: LOCALE_ID, useValue: 'pt-BR'}],   // para apresentar MOEDA
+
+
+ 6.npm install chart.js
+   https://www.chartjs.org/docs/latest/
+
+
+ // PARA GERAR O GRAFICO
+    @ViewChild('meuCanvas',{static:true}) elemento!:ElementRef;
+  // PARA GERAR O GRAFICO
+
+
+  grafico(){  ...}
+
+  outro subplugin do chatjs--> npm i chartjs-plugin-datalabels
+
+  NO HTML
+    <div class="col-6">
+                  <canvas #meuCanvas width="300" height="200"> </canvas>
+                  </div>
+
+
+   ========================================================================
+
+   npm i @popperjs/core
+npm install jquery
+
+
+NO ARQUIVO ANGULAR.JSON INSERIR:
+
+ "scripts": [
+               "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/popper.js/dist/umd/popper.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
+
+
+
+# para instalar o http-server e ter o front no computador
+npm i -g http-server

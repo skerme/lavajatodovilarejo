@@ -1,0 +1,585 @@
+
+   <mat-accordion>
+
+    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)"  hideToggle>
+
+
+
+      <mat-expansion-panel-header class="tamanho_texto_celular  tamanho_texto_desktop  alert alert-primary" style="margin-top: 5px;   background: rgb(109, 0, 199);   font-weight: bold; font-style: italic;"   >
+
+        <!-- style="margin-top: 5px;   background: rgb(109, 0, 199); font-size: 30px;   padding-left: 1100px; font-weight: bold; font-style: italic;" -->
+         <mat-panel-title >
+          COMPRA
+
+        </mat-panel-title>
+        <!-- <mat-panel-description  >
+          RESULTADO
+        </mat-panel-description> -->
+      </mat-expansion-panel-header>
+
+<!-- // INICIO COMPRA AQUI -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <DIV class="row">
+          <div class="col-6">
+            <mat-card class="example-card">
+              <mat-card-title style="text-align: center"
+                >PRODUTOS</mat-card-title
+              >
+              <!-- <mat-card-subtitle style="text-align: center;">fsdfsd</mat-card-subtitle> -->
+
+              <mat-card-content>
+                <!-- //TAMANHOS -->
+                <form [formGroup]="formVenda">
+                  <mat-radio-group
+                    aria-label="Select an option"
+                    formControlName="tamanho"
+                  >
+                    <mat-radio-button value="P">P</mat-radio-button>
+                    <mat-radio-button value="M">M</mat-radio-button>
+                    <mat-radio-button value="G">G</mat-radio-button>
+                    <mat-radio-button value="GG">GG</mat-radio-button>
+                    <mat-radio-button value="36">36</mat-radio-button>
+                    <mat-radio-button value="38">38</mat-radio-button>
+                    <mat-radio-button value="40">40</mat-radio-button>
+                    <mat-radio-button value="42">42</mat-radio-button>
+                    <mat-radio-button value="44">44</mat-radio-button>
+                    <mat-radio-button value="46">46</mat-radio-button>
+                    <mat-radio-button value="48">48</mat-radio-button>
+                    <mat-radio-button value="U">U</mat-radio-button>
+                  </mat-radio-group>
+                </form>
+                <!-- //TAMANHOS -->
+
+
+
+                <!-- ////////////////////////////////////////////////////// -->
+
+
+
+
+
+                <div class="mat-elevation-z8 table-overflow">
+
+                  <DIV class="row">
+
+                    <input   type="number"     class="form-control"        [(ngModel)]="formVenda.value.quantidade"   placeholder="QUANTIDADE"  mask="separator.2"    style="margin-top: 5px; text-align: center;"    />
+
+                    <input   id="item"      [(ngModel)]="formVenda.value.codigo"    style="font-size: xx-large; text-align: center"       (keyup)="filterData($event)"    placeholder="Pesquisar"      />
+
+
+
+
+                  </DIV>
+
+                  <table mat-table matSort [dataSource]="this.dataSource">
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="codigo">
+                      <th
+                        mat-header-cell
+                        mat-sort-header
+                        *matHeaderCellDef
+                        style="
+                          text-align: left;
+                          color: rgb(255, 255, 255);
+                          font-weight: bold;
+                          font-size: 15px;
+                        "
+                      >
+                        CÓDIGO
+                      </th>
+                      <td
+                        mat-cell
+                        *matCellDef="let element"
+                        style="
+                          text-align: left;
+                          color: rgb(255, 255, 255);
+                          font-weight: bold;
+                          font-size: 15px;
+                        "
+                      >
+                        {{ element.codigo }}
+                      </td>
+                    </ng-container>
+
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="descricao">
+                      <th
+                        mat-header-cell
+                        mat-sort-header
+                        *matHeaderCellDef
+                        style="
+                          text-align: left;
+                          color: rgb(255, 255, 255);
+                          font-weight: bold;
+                          font-size: 15px;
+                        "
+                      >
+                        DESCRIÇÃO
+                      </th>
+                      <td
+                        mat-cell
+                        *matCellDef="let element"
+                        style="
+                          text-align: left;
+                          color: rgb(255, 255, 255);
+                          font-weight: bold;
+                          font-size: 15px;
+                        "
+                      >
+                        {{ element.descricao }}
+                      </td>
+                    </ng-container>
+
+
+
+
+
+                    <ng-container matColumnDef="acao">
+                      <th
+                        mat-header-cell
+                        *matHeaderCellDef
+                        style="
+                          text-align: left;
+                          color: rgb(255, 255, 255);
+                          font-weight: bold;
+                          font-size: 15px;
+                        "
+                      >
+                        AÇÃO
+                      </th>
+                      <td
+                        mat-cell
+                        *matCellDef="let element"
+                        style="
+                          text-align: left;
+                          color: rgb(255, 255, 255);
+                          font-weight: bold;
+                          font-size: 15px;
+                        "
+                      >
+
+
+
+
+
+
+
+                        <button
+                          type="button"
+                          class="btn btn-success"
+                          (click)="incluirCesta(element)"
+                        >
+                          +
+                        </button>
+                      </td>
+                    </ng-container>
+
+                    <tr
+                      mat-header-row
+                      *matHeaderRowDef="displayedColumns; sticky: true"
+                    ></tr>
+                    <tr
+                      mat-row
+                      *matRowDef="let row; columns: displayedColumns"
+                    ></tr>
+                  </table>
+
+                  <mat-paginator #paginator
+                  [pageSize]="16"
+                  >
+                   </mat-paginator>
+
+                </div>
+
+                <!-- ////////////////////////////////////////////////////// -->
+              </mat-card-content>
+            </mat-card>
+          </div>
+
+          <div class="col-6">
+
+
+
+            <mat-card class="example-card" style="margin-right: 10px">
+
+
+              <div class="row">
+                <button style="font-weigth:bold; font-size: 25px " type="button" class="btn btn-danger"     (click)="excluircesta()">  <i class="bi bi-x-square " ></i>EXCLUIR CESTA</button>
+
+
+
+
+                </div>
+
+
+
+
+ <br>
+
+
+
+              <!-- <mat-card-title style="text-align: center">CESTA</mat-card-title> -->
+              <!-- <mat-card-subtitle style="text-align: center;">fdgdf</mat-card-subtitle> -->
+
+              <mat-card-content>
+                <!-- <button type="button" class="btn btn-success"     (click)="vender()">+</button> -->
+                <!-- CARRINHAO INICIO -->
+
+                <!-- ACAO TIRADA  (click)="excluircesta()" -->
+                <!-- <button  style="font-weight: bolder;" type="button" class="btn btn-danger"  ><i class="bi bi-cart-x-fill table-overflow computador_botoes "></i> TECLE F5 PARA CANCELAR</button> -->
+
+                <div class="row table-overflow2">
+                  <table
+                    class="table table-dark table-bordered computador_teste2"
+                  >
+                    <thead>
+                      <tr>
+                        <th scope="col">CÓDIGO</th>
+                        <th scope="col">DESCRIÇÃO</th>
+                        <th scope="col">QUANTIDADE</th>
+                        <th scope="col">TAMANHO</th>
+                        <th scope="col" style="font-weight: bold;">AUM</th>
+                        <th scope="col">DIM</th>
+                        <th scope="col">EXC</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <tr *ngFor="let venda of venda.itens; let i = index">
+                        <td>{{ venda.codigo }}</td>
+                        <td>{{ venda.descricao }}</td>
+                        <td>{{ venda.quantidade }}</td>
+                        <td>{{ venda.tamanho }}</td>
+
+                        <td>
+                          <button
+                            type="button"
+                            class="btn btn-primary"
+                            (click)="Aumentaritem(i)"
+                          >
+                           <i class="bi bi-cart-plus computador_botoes"></i>
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            type="button"
+                            class="btn btn-warning"
+                            (click)="Diminuiritem(i)"
+                          >
+                              <i class="bi bi-cart-dash computador_botoes"></i>
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            type="button"
+                            class="btn btn-danger"
+                            (click)="excluiritem(i)"
+                          >
+                            <i class="bi bi-cart-x computador_botoes"></i>
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="col-lg-12">
+                  <!--   CONSULTA PRODUTO   MD->CELULAR NO MODO MONITOR   SM->MEUTABLET  XS->CELULAR MONITOR-->
+
+                  <div class="form-group">
+                    <div class="row computador_teste2">
+                      <div      class="alert alert-primary alert computador_teste2"  role="alert"  >
+                        <label                          for="ITENS"                          class="control-label computador_teste2"      >ITENS:</label>
+                        {{ this.venda.totalItens }}
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <label style="font-weight: bold; font-size: 18px" >CUSTO DOS ITENS</label >
+                      <input    type="number"    class="form-control"   id="custoDosItens"   [(ngModel)]="this.venda.custoDosItens" placeholder="CustoDosItens" mask="separator.2"  style="margin-bottom: 15px" />
+                    </div>
+
+
+                    <div class="row">
+                      <label style="font-weight: bold; font-size: 18px" >FRETE</label >
+                      <input    type="number"    class="form-control"   id="frete"   [(ngModel)]="this.venda.frete" placeholder="FRETE" mask="separator.2"  style="margin-bottom: 15px" />
+                    </div>
+
+                    <div class="row">
+                      <label style="font-weight: bold; font-size: 18px"  >TRIBUTO</label >
+                      <input  type="number"  class="form-control"  id="tributo"  [(ngModel)]="this.venda.tributo"   placeholder="tributo"  mask="separator.2" style="margin-bottom: 15px" />
+                    </div>
+
+                    <div class="row">
+                      <label style="font-weight: bold; font-size: 18px"  >OUTROS</label >
+                      <input  type="number"  class="form-control"  id="outros"  [(ngModel)]="this.venda.outros"   placeholder="outros"  mask="separator.2" style="margin-bottom: 15px" />
+                    </div>
+
+                    <div class="row">
+                      <div
+                        class="alert alert-primary computador_teste2"
+                        role="alert"
+                      >
+                        TOTAL DA COMPRA:{{ this.venda.total | number: ".2-2" }}
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-4"></div>
+                      <button
+                        type="button"
+                        class="btn btn-success btn-lg"
+                        (click)="comprar()"
+                      >
+                         <i class="bi bi-cash-coin computador_botoes">REGISTRAR</i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <BR />
+                <BR />
+
+                <!-- </div> -->
+
+                <!-- CARRINHO FIM -->
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </DIV>
+
+
+
+
+
+
+
+
+
+
+<!-- // FIM COMPRA AQUI -->
+
+    </mat-expansion-panel>
+
+
+
+    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)"  hideToggle>
+
+
+
+      <mat-expansion-panel-header class="tamanho_texto_celular  tamanho_texto_desktop  alert alert-primary" style="margin-top: 5px;   background: rgb(109, 0, 199);   font-weight: bold; font-style: italic;"   >
+
+        <!-- style="margin-top: 5px;   background: rgb(109, 0, 199); font-size: 30px;   padding-left: 1100px; font-weight: bold; font-style: italic;" -->
+         <mat-panel-title >
+          HISTÓRICO
+
+        </mat-panel-title>
+        <!-- <mat-panel-description  >
+          RESULTADO
+        </mat-panel-description> -->
+      </mat-expansion-panel-header>
+
+     <!-- // INICIO COMPRAS AQUI -->
+     <div class="row conteiner-overflow ">
+      <div class="container " style="background: rgb(52, 87, 228);">
+
+
+
+
+
+
+
+
+
+
+  <DIV class="row"  >
+    <input style="font-size:xx-large;  text-align: center;"  (keyup)="filterData2($event)"  placeholder="Pesquisar">
+
+
+
+
+    <table mat-table  matSort [dataSource]="this.dataSource2"  >
+
+           <!-- Position Column -->
+           <ng-container matColumnDef="codigo">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 30px;"> CODIGO</th>
+            <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 30px;"> {{element.codigo}} </td>
+          </ng-container>
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="cliente">
+        <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 30px;"> CLIENTE</th>
+        <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 30px;"> {{element.cliente | uppercase}} </td>
+      </ng-container>
+
+
+
+
+
+
+
+
+       <!-- Position Column -->
+       <!-- <ng-container matColumnDef="valorRecebido">
+        <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 30px;">VALOR RECEBIDO</th>
+        <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 30px;"> {{element.valorRecebido}} </td>
+      </ng-container> -->
+
+
+          <ng-container matColumnDef="frete">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 30px;">FRETE </th>
+            <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 30px;"> {{element.frete | currency : 'BRL' }} </td>
+          </ng-container>
+
+
+
+
+      <ng-container matColumnDef="tributo">
+        <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 30px;">TRIBUTO </th>
+        <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 30px;"> {{element.tributo | currency : 'BRL' }} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="outros">
+        <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 30px;">OUTROS </th>
+        <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 30px;"> {{element.outros | currency : 'BRL' }} </td>
+      </ng-container>
+
+     <!-- Name Column -->
+     <ng-container matColumnDef="total">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 30px;">TOTAL</th>
+      <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 30px;"> {{element.total | currency : 'BRL' }} </td>
+    </ng-container>
+
+              <!-- Name Column -->
+              <ng-container matColumnDef="dataDaCompra">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 30px;">DATA DO REGISTRO </th>
+                <td mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 30px;"> {{element.dataDaCompra | date:'dd/MM/yyyy HH:mm' }} </td>
+              </ng-container>
+
+              <!-- | date:'dd/MM/yyyy HH:mm' -->
+
+      <ng-container matColumnDef="acao"  >
+        <th mat-header-cell *matHeaderCellDef style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 30px;">AÇÃO</th>
+        <td  mat-cell *matCellDef="let element" style="text-align: left;  color: rgb(255, 255, 255);  font-weight: bold;  font-size: 30px;" >
+
+
+
+          <button type="button" class="btn btn-info "  (click)="visualizar(element)" > <i class="bi bi-eye"></i> </button>
+          <button type="button" class="btn btn-danger"   (click)="desativarVenda(element)" >  <i class="bi bi-x-square " ></i> </button>
+
+
+        </td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns2; sticky: true"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
+  </table>
+
+  <mat-paginator #paginator2
+  [pageSize]="9"
+  >
+</mat-paginator>
+
+
+</DIV>
+
+  <br><br><br><br><br>
+
+
+<div style="font-weight: bold;  font-size: 50px;   text-align: center;" class="alert alert-dark" role="alert">
+  COMPRA:{{codigoDaVenda}}
+</div>
+
+
+  <table class="table table-dark table-bordered table-striped  "  style="font-size: 30px;">
+  <thead>
+    <tr>
+      <th scope="col">CÓDIGO</th>
+      <th scope="col">DESCRIÇÃO</th>
+      <th scope="col">TAMANHO</th>
+
+      <th *ngIf="this.ocutarmenuopcoes" scope="col">CUSTO</th>
+
+      <th scope="col">QUANTIDADE</th>
+
+
+
+    </tr>
+  </thead>
+  <tbody>
+
+
+    <tr *ngFor="let item of this.detalhes">
+      <td>{{ item.codigo }}</td>
+      <td>{{ item.descricao | uppercase}}</td>
+      <td>{{ item.tamanho }}</td>
+
+      <td *ngIf="this.ocutarmenuopcoes" >{{ item.precoCompra | currency : 'BRL' }}</td>
+
+      <td>{{ item.quantidade | number }}</td>
+
+
+    </tr>
+  </tbody>
+</table>
+
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- // FIM COMPRAS AQUI -->
+
+    </mat-expansion-panel>
+
+
+
+  </mat-accordion>
+
+
+
+
+
+
+
+
+
+
+
