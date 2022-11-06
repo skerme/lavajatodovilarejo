@@ -260,8 +260,8 @@
             <tr *ngFor="let item of this.vendaPorVendedor">
               <td>{{ item._id.vendedor |uppercase  }}</td>
               <td>{{ item.count | currency : 'BRL'  }}</td>
-              <td  *ngIf="item._id.vendedor  =='Luiz'"   >{{ item.count*.5 | currency : 'BRL'  }}</td>
-              <td  *ngIf="item._id.vendedor  !='Luiz'"   >{{ item.count*.4 | currency : 'BRL'  }}</td>
+              <td  *ngIf="item._id.vendedor  =='LUIS'"   >{{ item.count*.5 | currency : 'BRL'  }}</td>
+              <td  *ngIf="item._id.vendedor  !='LUIS'"   >{{ item.count*.4 | currency : 'BRL'  }}</td>
             </tr>
           </tbody>
         </table>

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  urlhostname: 'http://localhost:3000'//'https://lavajatodovilarejoapi.herokuapp.com''http://localhost:3000'
+  urlhostname: 'https://lavajatodovilarejoapi.herokuapp.com'//'https://lavajatodovilarejoapi.herokuapp.com''http://localhost:3000'
 };
 
 /*
