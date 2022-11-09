@@ -270,6 +270,13 @@ export class UsuarioComponent implements OnInit {
 
   listarAtivo() {
     this.usuarioService.listarAtivo().subscribe((itens: any) => {
+
+
+     // PARA NÃO MOSTRA O CADASTRO GESTÃO NO MENU USUSÁRIOS
+     itens = itens.filter((item: { name: string; })  => item.name != "GESTAO");
+     // PARA NÃO MOSTRA O CADASTRO GESTÃO NO MENU USUSÁRIOS
+
+
       this.dataSource = new MatTableDataSource(itens);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.matSort;
