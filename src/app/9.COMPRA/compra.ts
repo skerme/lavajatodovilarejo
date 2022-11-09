@@ -1,35 +1,17 @@
 
-import { Itens } from "./itens";
-
-
-export interface  Compra {
-
-
-
-
-
-  itens: Array<Itens>,
-
-
-
-  custoDosItens: number,
-
-  total: number,
-  subtotal: number,            //so na cesta
-  totalItens: number,            //so na cesta
-  tributo: number,            //so na cesta
-
-
-  valorRecebido: number,
-  frete: number,
-  outros: number,
-  troco: number,
-  custoVenda: number,
-  codigo: number
-
-
+export interface Compra {
+  nome: string,
+  cpf: string,
+  cnpj: string,
+  email: string,
+  bairro: string,
+  cep: string,
+  preco:number,
+  logradouro: string,
+  numero: string,
+  pontoReferencia: string,
+  telefone: string,
 }
-
 
 
 

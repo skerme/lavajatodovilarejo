@@ -1217,7 +1217,7 @@ inserirProduto(){
   // Swal.fire({icon: 'success',text:'REGISTRO EFETUADO COM COM SUCESSO!!'})
 
   Swal.fire({
-    title: 'CÓDIGO-TAAMNHO-QUANTIDADE <BR> EXEMPLO:  125-P-1000 ',
+    title: 'CÓDIGO-TAMANHO-QUANTIDADE <BR> EXEMPLO:  125-P-1000 ',
     input: 'text',
 
 

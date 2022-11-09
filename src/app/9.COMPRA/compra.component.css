@@ -1,64 +1,54 @@
-/*
-/* // PARA O RADIO BUTTON DE DEMANDA */
-.mat-radio-button ~ .mat-radio-button {
-  margin-left: 10px;
-}
-/* // PARA O RADIO BUTTON DE DEMANDA */
-
-
-
-.example-form {
-  min-width: 150px;
-  max-width: 500px;
-  width: 100%;
+.example-container .mat-form-field + .mat-form-field {
+  margin-left: 8px;
 }
 
-.example-full-width {
-  width: 100%;
+.example-right-align {
+  text-align: right;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.example-right-align {
+  -moz-appearance: textfield;
 }
 
 
-
-
- */
 
 /* PARA A TABELA DO PRODUTO */
 .table-overflow {
-  max-height:700px;
-  overflow-x:auto;
-  overflow-y: scroll;
-  overflow: auto;
-}
-
-
-
-/* CESTA */
-.table-overflow2 {
-  max-height:550px;
-  overflow-x:auto;
-  overflow-y: scroll;
+  max-height:1120px;
+  overflow-x: hidden;
+  overflow-y: hidden;
 
 }
 
-.computador_teste2 {
-  height: auto;
-  font-size:14px;
-  font-weight: bold
-}
-/* CESTA */
 
-
-
- /* tamanho da tela */
 /* .conteiner-overflow {
-  height: 1185px;
-  width: 2715px;
-  margin-left: 0px;
+  height: 1108px;
+  width: 2402px;
+  margin-left: 10px;
 
   /* padding: 15px; */
   /* border: 1px solid #444;
-  overflow: auto;
+
+
+
+
   overflow-x: hidden;
   overflow-y: hidden;
+
 } */
-/* tamanho da tela */
+
+
+
+table {
+  width: 100%;
+}
+
+
+.example-card {
+  max-width: 400px;
+}
