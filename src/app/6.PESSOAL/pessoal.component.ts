@@ -91,7 +91,7 @@ export class PessoalComponent implements OnInit {
   @ViewChild(MatSort) matSort!: MatSort;
 
   //////////////////////////////////////////
-
+  nome_desativar_apenas_para_administrador=''
 
   constructor(
     private pessoalService: PessoalService,
@@ -122,6 +122,8 @@ export class PessoalComponent implements OnInit {
 //////LOCALIZACAO//////////////////////////////////////
 
    this.listar();
+
+   this.nome_desativar_apenas_para_administrador=String(sessionStorage.getItem('name'))
   }
 
 

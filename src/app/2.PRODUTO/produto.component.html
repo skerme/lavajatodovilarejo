@@ -395,7 +395,7 @@
 
 
         <button type="button" class="btn btn-info "  (click)="editar(element)" ><i class="bi bi-pencil-square "></i></button>
-        <!-- <button type="button" class="btn btn-danger"   (click)="desativar(element)" ><i class="bi bi-x-square " ></i>   </button> -->
+        <button *ngIf="this.nome_desativar_apenas_para_administrador=='GESTAO'" type="button" class="btn btn-danger"   (click)="desativar(element)" > <i class="bi bi-x-square " ></i>   </button>
         <!-- <button type="button"  class="btn btn-primary " (click)="gerarpdf(element)" > <i class="bi bi-printer-fill"></i></button><br> -->
 
 

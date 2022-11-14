@@ -77,7 +77,7 @@ export class LivrocaixaComponent implements OnInit {
   @ViewChild(MatSort) matSort3!: MatSort;
 
 
-
+  nome_desativar_apenas_para_administrador=''
   constructor(
     private livroCaixaService: LivrocaixaService,
     private formBuilder: FormBuilder,
@@ -126,7 +126,7 @@ export class LivrocaixaComponent implements OnInit {
 
 
    window.document.getElementById("selecaoDeProduto")?.focus()
-
+   this.nome_desativar_apenas_para_administrador=String(sessionStorage.getItem('name'))
   }
 
   setStep(index: number) {

@@ -206,7 +206,7 @@ export class GestaoComponent implements OnInit {
   //  this.getPvAtacado()
      // para pegar os dados do estoque
 
-
+  
 
     }
 

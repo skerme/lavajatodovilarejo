@@ -56,7 +56,7 @@ export class UsuarioComponent implements OnInit {
   @ViewChild(MatSort) matSort!: MatSort;
 
 
-
+  nome_desativar_apenas_para_administrador=''
   constructor(
     private usuarioService: UsuarioService,
     private estatisticaService: EstatisticaService
@@ -90,7 +90,7 @@ export class UsuarioComponent implements OnInit {
    this.limpar()
 
 
-
+   this.nome_desativar_apenas_para_administrador=String(sessionStorage.getItem('name'))
 
 
   }

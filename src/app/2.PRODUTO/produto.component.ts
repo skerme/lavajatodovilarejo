@@ -124,7 +124,7 @@ historicoProduto: any[]=[]
   @ViewChild(MatSort) matSort2!: MatSort;
 ///////////////////////////////////////////////listar historico///////////////////////////////
 
-
+nome_desativar_apenas_para_administrador=''
   constructor(
     private consumirService: ProdutoService,
     private formBuilder: FormBuilder,
@@ -177,7 +177,7 @@ historicoProduto: any[]=[]
 
 
    window.document.getElementById("descricao")?.focus()
-
+   this.nome_desativar_apenas_para_administrador=String(sessionStorage.getItem('name'))
   }
 
   setStep(index: number) {

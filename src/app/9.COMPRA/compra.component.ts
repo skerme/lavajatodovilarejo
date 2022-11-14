@@ -78,6 +78,9 @@ export class CompraComponent implements OnInit {
     totalPvVarejo: number=0
     totalPvAtavado: number=0
 
+
+    nome_desativar_apenas_para_administrador=''
+
      ngOnInit() {
 
 
@@ -103,6 +106,12 @@ export class CompraComponent implements OnInit {
 
 
    this.listarAtivo();
+
+
+
+   this.nome_desativar_apenas_para_administrador=String(sessionStorage.getItem('name'))
+  
+
   }
 
 
@@ -285,6 +294,9 @@ export class CompraComponent implements OnInit {
 
 
   listarAtivo() {
+
+
+
     this.compraService.listarAtivo().subscribe((itens: any) => {
       this.dataSource = new MatTableDataSource(itens);
       this.dataSource.paginator = this.paginator;
