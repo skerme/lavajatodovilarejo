@@ -217,6 +217,7 @@
 
 
 
+
 <!--
 </h5> -->
 
@@ -302,7 +303,7 @@
                   <mat-panel-title style="  margin-left: 140px;">
                     FORMAS DE PAGAMENTO
                   </mat-panel-title>
-                  
+
 
                 </mat-expansion-panel-header>
 
@@ -479,6 +480,53 @@
                   <!-- //LAVAJATO -->
 
                   <table mat-table matSort [dataSource]="this.dataSource">
+
+
+
+
+                    <ng-container matColumnDef="ordem">
+                      <th
+                        mat-header-cell
+                        mat-sort-header
+                        *matHeaderCellDef
+                        style="
+                          text-align: left;
+                          color: rgb(255, 255, 255);
+                          font-weight: bold;
+                          font-size: 10px;
+                        "
+                      >
+                        ORDEM
+                      </th>
+                      <td
+                        mat-cell
+                        *matCellDef="let element"
+                        style="
+                          text-align: left;
+                          color: rgb(255, 255, 255);
+                          font-weight: bold;
+                          font-size: 10px;
+                        "
+                      >
+                        {{ element.ordem }}
+                      </td>
+                    </ng-container>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     <!-- Position Column -->
                     <ng-container matColumnDef="codigo">
                       <th

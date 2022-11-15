@@ -94,6 +94,7 @@ export class VendaComponent implements OnInit {
     'descricao',
     'precoVendaVarejo',
     // 'precoVendaAtacado',
+   // 'ordem'
   ];
 
 
@@ -823,7 +824,11 @@ this.estatisticaService.saveCar(this.acesso).subscribe((x) => {      });
 
   listarAtivoClientes(){
   this.clienteService.listarAtivo().subscribe((clientes: any) => {
-    console.log("fff",clientes)
+
+
+
+
+
 
     this.dataSourceClientes = new MatTableDataSource(clientes);
     this.dataSourceClientes.paginator = this.paginatorClientes;
@@ -869,6 +874,16 @@ this.estatisticaService.saveCar(this.acesso).subscribe((x) => {      });
       // }
 // era para REMOVER TODOS OS PRODUTOS COM ESTOQUE ZERO
 
+
+
+
+
+ // PARA MANTER A TABELA ORDENA NA FORMA DECRESCENTE
+ itens.sort(function(a:any, b:any){return a.ordem-b.ordem});
+ itens=itens
+
+ console.log("vvvvvvvvvvv",itens)
+////////////////////////////////////fim//////////////////
 
 
 

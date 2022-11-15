@@ -62,6 +62,17 @@ reporProduto(car: any): Observable<any> {
     }
 
 
+     // salva um carro
+     trocarVendedor(car: any): Observable<any> {
+      //  console.log("SALVAR", car._id)
+
+          return this.httpClient.post<any>(this.url+'/venda/trocarVendedor', JSON.stringify(car), this.httpOptions)
+
+
+        }
+
+
+
 
    // salva um carro
    estadodoPagamento(car: any): Observable<any> {

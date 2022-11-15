@@ -46,7 +46,7 @@ export class HistoricoComponent implements OnInit {
   panelOpenState = false;
 
 
-
+  vendedor: string = '0';
 
   formLogin!: FormGroup;
   _id: string = '0';
@@ -68,8 +68,8 @@ export class HistoricoComponent implements OnInit {
     // 'troco',
     'dataDaVenda',
     'dataDaVendaSaida',
-    'estadodoPagamento'
-
+    'estadodoPagamento',
+    
 
   ];
   dataSource!: MatTableDataSource<any>;
@@ -79,6 +79,7 @@ export class HistoricoComponent implements OnInit {
 
 
   nome_desativar_apenas_para_administrador=''
+
   constructor(
     private historicoService: HistoricoService,
     private formBuilder: FormBuilder,
@@ -217,6 +218,56 @@ export class HistoricoComponent implements OnInit {
       // this.filterData("aa")
     });
   }
+
+
+
+  trocarVendedor(item: any, nome: any) {
+    item.vendedor=nome
+
+    //   Swal.fire({
+    //     title: 'SAÍDA REGISTRADA !!!',
+         // text: "You won't be able to revert this!",
+    //     icon: 'warning',
+    //     showCancelButton: true,
+    //     confirmButtonColor: '#3085d6',
+    //     cancelButtonColor: '#d33',
+    //     confirmButtonText: 'SIM'
+    //   }).then((result) => {
+    //     if (result.isConfirmed) {
+           Swal.fire(
+             'SAÍDA SUCESSO!!!',
+              '',
+              'success'
+           )
+
+
+
+           this.historicoService.trocarVendedor(item).subscribe((x: any) => {
+
+             this.listarAtivos()
+                       });
+
+
+     //    }
+    //   })
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
