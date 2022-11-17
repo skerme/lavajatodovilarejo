@@ -11,7 +11,8 @@ export interface Compra {
   numero: string,
   pontoReferencia: string,
   telefone: string,
+  dataInicio: Date,
+  dataFim: Date
+
 }
-
-
 

@@ -134,9 +134,20 @@
 
 
 
+          <mat-form-field style="margin-left: 0px;" hintLabel="Max 10 characters" appearance="fill">
+            <mat-label>DATAINÍCIO</mat-label>
+            <input matInput [matDatepicker]="picker"    [(ngModel)]= "dataInicio" >
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
 
 
-
+          <mat-form-field style="margin-left: 0px;" hintLabel="Max 10 characters" appearance="fill">
+            <mat-label>DATAFIM</mat-label>
+            <input matInput [matDatepicker]="picker1"    [(ngModel)]= "dataFim" >
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
 
 
 

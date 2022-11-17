@@ -40,7 +40,8 @@ export class CompraComponent implements OnInit {
   numero: string=''
   pontoReferencia: string=''
   telefone: string=''
-
+  dataInicio: Date=new Date()
+  dataFim: Date=new Date()
 
   displayedColumns = [
     'acao',
@@ -110,7 +111,7 @@ export class CompraComponent implements OnInit {
 
 
    this.nome_desativar_apenas_para_administrador=String(sessionStorage.getItem('name'))
-  
+
 
   }
 
@@ -136,6 +137,8 @@ export class CompraComponent implements OnInit {
     this.pontoReferencia=this.pontoReferencia.toUpperCase()
     this.compra.pontoReferencia=this.pontoReferencia.toUpperCase()
     this.compra.telefone=this.telefone
+    this.compra.dataInicio=this.dataInicio
+    this.compra.dataFim=this.dataFim
 
 
 
