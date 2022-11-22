@@ -31,7 +31,7 @@ PRIMEIRA VEZ:
    git init
    git remote add minhamaquina https://github.com/skerme/lavajatodovilarejo.git
    git add .
-   git commit -am "inicio"                   // esse "a" eh para nao precisar  do "git ." no caso de nao ter arquivo novo.
+   git commit -am "inicio"                   // esse "a" eh para nao precisar  do "git add ." no caso de nao ter arquivo novo.
    git push -u minhamaquina master
 
 PRÓXIMAS:
