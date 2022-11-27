@@ -323,7 +323,8 @@ export class CompraComponent implements OnInit {
        this.numero=item.numero
        this.pontoReferencia=item.pontoReferencia.toUpperCase()
        this.telefone=item.telefone
-
+       this.dataInicio=item.dataInicio
+       this.dataFim=item.dataFim
 
 
 
