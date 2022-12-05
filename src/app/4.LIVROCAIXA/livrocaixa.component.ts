@@ -461,4 +461,28 @@ if(sessionStorage.getItem('perfil')=='administrador'){
 
   }
 
+
+
+
+
+
+
+
+
+
+
+  insereLavador(nome: any) {
+
+    this.descricao=nome
+
+    this.descricao=this.descricao.toUpperCase()
+
+
+
+
+  }
+
+
+
+
 }
