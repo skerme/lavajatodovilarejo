@@ -55,7 +55,7 @@ export class LivrocaixaComponent implements OnInit {
   _id_produto: string='0'
   descricao: string = '';
   tipo: string = '';
-  valor: number=0
+  valor: number=0;
   data: Date=new Date()
   perfil: string=''
 
@@ -474,7 +474,7 @@ if(sessionStorage.getItem('perfil')=='administrador'){
   insereLavador(nome: any) {
 
     this.descricao=nome
-
+    this.tipo='LAVADOR'
     this.descricao=this.descricao.toUpperCase()
 
 
