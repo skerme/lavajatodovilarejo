@@ -69,7 +69,7 @@ export class HistoricoComponent implements OnInit {
     'dataDaVenda',
     'dataDaVendaSaida',
     'estadodoPagamento',
-    
+
 
   ];
   dataSource!: MatTableDataSource<any>;
@@ -235,7 +235,7 @@ export class HistoricoComponent implements OnInit {
     //   }).then((result) => {
     //     if (result.isConfirmed) {
            Swal.fire(
-             'SAÍDA SUCESSO!!!',
+             'TROCA EFETUADA!!!',
               '',
               'success'
            )
