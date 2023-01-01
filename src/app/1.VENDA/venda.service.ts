@@ -43,7 +43,7 @@ constructor(private httpClient: HttpClient) { }
  listarFormaPagamentoTotal(datas:any): Observable<any[]> {
   return this.httpClient.post<any>(this.url+'/venda/totalPorFormaDePagamento', JSON.stringify(datas), this.httpOptions)
 
-  
+
 }
 
 
